@@ -124,10 +124,15 @@
   --font-weight-regular: 400;
   --font-weight-bold:    700;
 
+  /* --- Shadows (Figma effect styles) --- */
+  /* 3-value syntax is compatible with both `box-shadow` and `filter: drop-shadow()`. */
+  --shadow-deep: 0 4px 12px rgba(0, 0, 0, 0.16); /* Elevated surfaces, active controls. */
+  --shadow-soft: 0 2px 8px  rgba(0, 0, 0, 0.08); /* Resting / disabled / subtle states.  */
+
   /* --- Button Tokens --- */
   --btn-border-radius: 20px;
-  --btn-shadow:        0 4px 12px 0 rgba(0, 0, 0, 0.16); /* deep — all active states */
-  --btn-shadow-none:   none;                               /* disabled */
+  --btn-shadow:        var(--shadow-deep);
+  --btn-shadow-none:   none;
   --btn-padding-v:     8px;
   --btn-padding-h:     24px;
   --btn-font-size:     10px;
@@ -161,6 +166,31 @@
   --btn-tertiary-focus-border:    #dbdbdb;
   --btn-tertiary-active-bg:       #c4c4c4;
   --btn-tertiary-disabled-border: #c4c4c4;
+
+  /* Button — Link (Figma node 8683:1537) */
+  --btn-link-color:       var(--color-primary-300);
+  --btn-link-padding-v:   var(--spacing-sm);   /* 8px */
+  --btn-link-padding-h:   var(--spacing-none); /* 0  */
+  --btn-link-font-size:   var(--font-size-body-xs);    /* 10px */
+  --btn-link-font-weight: var(--font-weight-regular);  /* 400 — Regular, not Bold */
+  --btn-link-gap:         var(--spacing-sm);   /* 8px */
+  --btn-link-icon-size:   12px;
+
+  /* Button — Icon (filled white circle, Figma node 8683:1550) */
+  --btn-icon-size:            36px;
+  --btn-icon-padding:         var(--spacing-md);    /* 12px */
+  --btn-icon-bg:              var(--color-neutral-0);
+  --btn-icon-color:           var(--color-primary-300);
+  --btn-icon-inner-size:      14px;
+  --btn-icon-shadow-default:  var(--shadow-deep);
+  --btn-icon-shadow-disabled: var(--shadow-soft);
+
+  /* Button — Icon-Light (transparent, drop-shadow on icon silhouette) */
+  --btn-icon-light-size:       36px;
+  --btn-icon-light-padding:    var(--spacing-md);    /* 12px */
+  --btn-icon-light-color:      var(--color-primary-300);
+  --btn-icon-light-inner-size: 14px;
+  --btn-icon-light-shadow:     var(--shadow-deep);
 
   /* --- Text Input Tokens --- */
   --input-width:          311px;
@@ -461,6 +491,65 @@
   cursor:      not-allowed;
 }
 
+/* --- Link (text-only, Figma node 8683:1537) --- */
+.busup-btn--link {
+  height:          auto;
+  padding:         var(--btn-link-padding-v) var(--btn-link-padding-h);
+  gap:             var(--btn-link-gap);
+  background:      transparent;
+  color:           var(--btn-link-color);
+  border-color:    transparent;
+  box-shadow:      var(--btn-shadow-none);
+  font-size:       var(--btn-link-font-size);
+  font-weight:     var(--btn-link-font-weight);
+  line-height:     var(--line-height-body);
+  text-transform:  none;
+  letter-spacing:  0;
+}
+.busup-btn--link.busup-btn--underlined {
+  text-decoration:          underline;
+  text-decoration-skip-ink: none;
+}
+.busup-btn--link:disabled,
+.busup-btn--link.is-disabled {
+  opacity: 0.30;
+  cursor:  not-allowed;
+}
+
+/* --- Icon (filled white circle, Figma node 8683:1550) --- */
+.busup-btn--icon {
+  width:        var(--btn-icon-size);
+  height:       var(--btn-icon-size);
+  padding:      var(--btn-icon-padding);
+  background:   var(--btn-icon-bg);
+  color:        var(--btn-icon-color);
+  border-color: transparent;
+  box-shadow:   var(--btn-icon-shadow-default);
+}
+.busup-btn--icon:disabled,
+.busup-btn--icon.is-disabled {
+  opacity:    0.30;
+  box-shadow: var(--btn-icon-shadow-disabled);
+  cursor:     not-allowed;
+}
+
+/* --- Icon-Light (transparent — shadow applied via filter so it falls on the icon silhouette) --- */
+.busup-btn--icon-light {
+  width:        var(--btn-icon-light-size);
+  height:       var(--btn-icon-light-size);
+  padding:      var(--btn-icon-light-padding);
+  background:   transparent;
+  color:        var(--btn-icon-light-color);
+  border-color: transparent;
+  box-shadow:   none;
+  filter:       drop-shadow(var(--btn-icon-light-shadow));
+}
+.busup-btn--icon-light:disabled,
+.busup-btn--icon-light.is-disabled {
+  opacity: 0.30;
+  cursor:  not-allowed;
+}
+
 /* --------------------------------------------------------------------------
    5. TEXT INPUT COMPONENT STYLES
    -------------------------------------------------------------------------- */
@@ -641,7 +730,7 @@
   height:        var(--toggle-thumb-size);
   border-radius: 50%;
   background:    var(--toggle-thumb-color);
-  box-shadow:    0 2px 8px 0 rgba(0, 0, 0, 0.08); /* shadow-soft from Figma */
+  box-shadow:    var(--shadow-soft);
   transition:    transform 0.2s ease;
 }
 
