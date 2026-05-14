@@ -124,10 +124,15 @@
   --font-weight-regular: 400;
   --font-weight-bold:    700;
 
+  /* --- Shadows (Figma effect styles) --- */
+  /* 3-value syntax is compatible with both `box-shadow` and `filter: drop-shadow()`. */
+  --shadow-deep: 0 4px 12px rgba(0, 0, 0, 0.16); /* Elevated surfaces, active controls. */
+  --shadow-soft: 0 2px 8px  rgba(0, 0, 0, 0.08); /* Resting / disabled / subtle states.  */
+
   /* --- Button Tokens --- */
   --btn-border-radius: 20px;
-  --btn-shadow:        0 4px 12px 0 rgba(0, 0, 0, 0.16); /* deep — all active states */
-  --btn-shadow-none:   none;                               /* disabled */
+  --btn-shadow:        var(--shadow-deep);
+  --btn-shadow-none:   none;
   --btn-padding-v:     8px;
   --btn-padding-h:     24px;
   --btn-font-size:     10px;
@@ -177,15 +182,15 @@
   --btn-icon-bg:              var(--color-neutral-0);
   --btn-icon-color:           var(--color-primary-300);
   --btn-icon-inner-size:      14px;
-  --btn-icon-shadow-default:  0 4px 12px 0 rgba(0, 0, 0, 0.16); /* shadow-deep */
-  --btn-icon-shadow-disabled: 0 2px 8px 0 rgba(0, 0, 0, 0.08);  /* shadow-soft */
+  --btn-icon-shadow-default:  var(--shadow-deep);
+  --btn-icon-shadow-disabled: var(--shadow-soft);
 
   /* Button — Icon-Light (transparent, drop-shadow on icon silhouette) */
   --btn-icon-light-size:       36px;
   --btn-icon-light-padding:    var(--spacing-md);    /* 12px */
   --btn-icon-light-color:      var(--color-primary-300);
   --btn-icon-light-inner-size: 14px;
-  --btn-icon-light-shadow:     0 4px 12px rgba(0, 0, 0, 0.16);  /* shadow-deep */
+  --btn-icon-light-shadow:     var(--shadow-deep);
 
   /* --- Text Input Tokens --- */
   --input-width:          311px;
@@ -528,7 +533,7 @@
   cursor:     not-allowed;
 }
 
-/* --- Icon-Light (transparent, shadow on icon silhouette) --- */
+/* --- Icon-Light (transparent — shadow applied via filter so it falls on the icon silhouette) --- */
 .busup-btn--icon-light {
   width:        var(--btn-icon-light-size);
   height:       var(--btn-icon-light-size);
@@ -725,7 +730,7 @@
   height:        var(--toggle-thumb-size);
   border-radius: 50%;
   background:    var(--toggle-thumb-color);
-  box-shadow:    0 2px 8px 0 rgba(0, 0, 0, 0.08); /* shadow-soft from Figma */
+  box-shadow:    var(--shadow-soft);
   transition:    transform 0.2s ease;
 }
 
