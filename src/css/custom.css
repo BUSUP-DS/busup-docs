@@ -1,30 +1,704 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+/* ==========================================================================
+   BUSUP DESIGN SYSTEM — custom.css
+   All design tokens, component styles, and Docusaurus (Infima) overrides.
+   Source of truth: Figma file APP (D2qZyPt7FCRYFTOeW99LVy)
+   Language: English
+   ========================================================================== */
 
-/* You can override the default Infima variables here. */
-:root {
-  --ifm-color-primary: #00BF6F;
-  --ifm-color-primary-dark: #049157;
-  --ifm-color-primary-darker: #0A5D3D;
-  --ifm-color-primary-darkest: #0A5D3D;
-  --ifm-color-primary-light: #B2FFDD;
-  --ifm-color-primary-lighter: #D7FFED;
-  --ifm-color-primary-lightest: #D7FFED;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+/* --------------------------------------------------------------------------
+   1. FONT FACE
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Busup Sans';
+  src: url('../../static/fonts/BusupSans-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+@font-face {
+  font-family: 'Busup Sans';
+  src: url('../../static/fonts/BusupSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Busup Sans';
+  src: url('../../static/fonts/BusupSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --------------------------------------------------------------------------
+   2. DESIGN TOKENS — Light Mode (default)
+   -------------------------------------------------------------------------- */
+:root {
+
+  /* --- Color Palette --- */
+
+  /* Primary (Green) */
+  --color-primary-100: #d7ffed;
+  --color-primary-200: #b2ffdd;
+  --color-primary-300: #00bf6f;   /* brand main */
+  --color-primary-400: #049157;
+  --color-primary-500: #0a5d3d;
+
+  /* Secondary (Red/Coral) */
+  --color-secondary-100: #fde6e3;
+  --color-secondary-200: #f9b3a8;
+  --color-secondary-300: #ea6753;
+  --color-secondary-400: #b33522;
+  --color-secondary-500: #7c2c20;
+
+  /* Info (Blue) */
+  --color-info-100: #e0f2fe;
+  --color-info-200: #bae6fd;
+  --color-info-300: #29b6f6;
+  --color-info-400: #0383c6;
+  --color-info-500: #085884;
+
+  /* Alert (Amber) */
+  --color-alert-100: #fff4c5;
+  --color-alert-200: #ffd746;
+  --color-alert-300: #ffa000;
+  --color-alert-400: #bb5202;
+  --color-alert-500: #7c340b;
+
+  /* Danger (Red) */
+  --color-danger-100: #ffe2e1;
+  --color-danger-200: #ffa4a2;
+  --color-danger-300: #e53935;
+  --color-danger-400: #9d1a17;
+  --color-danger-500: #7c2c20;
+
+  /* Success (Green feedback) */
+  --color-success-100: #e3f5e3;
+  --color-success-200: #9dd89f;
+  --color-success-300: #66bb6a;
+  --color-success-400: #358439;
+  --color-success-500: #28532a;
+
+  /* Neutral */
+  --color-neutral-0:    #ffffff;
+  --color-neutral-50:   #f4f4f4;
+  --color-neutral-100:  #dbdbdb;
+  --color-neutral-200:  #c4c4c4;
+  --color-neutral-300:  #989898;
+  --color-neutral-400:  #414141;
+  --color-neutral-500:  #212121;
+  --color-neutral-1000: #000000;
+
+  /* --- Spacing --- */
+  --spacing-none:   0px;
+  --spacing-2xs:    2px;
+  --spacing-xs:     4px;
+  --spacing-sm:     8px;
+  --spacing-md:     12px;
+  --spacing-lg:     16px;
+  --spacing-xl:     20px;
+  --spacing-2xl:    24px;
+  --spacing-3xl:    28px;
+  --spacing-border: 1px;
+
+  /* --- Typography --- */
+  --font-family-brand: 'Busup Sans', sans-serif;
+
+  --font-size-display:      50px;
+  --font-size-header:       42px;
+  --font-size-headline:     35px;
+  --font-size-subheader:    29px;
+  --font-size-subheadline:  24px;
+  --font-size-body-lg:      20px;
+  --font-size-body-md:      16px;
+  --font-size-body-default: 14px;
+  --font-size-body-sm:      12px;
+  --font-size-body-xs:      10px;
+
+  --line-height-heading: 1.2;
+  --line-height-body:    1.5;
+
+  --font-weight-light:   300;
+  --font-weight-regular: 400;
+  --font-weight-bold:    700;
+
+  /* --- Button Tokens --- */
+  --btn-border-radius: 20px;
+  --btn-shadow:        0 4px 12px 0 rgba(0, 0, 0, 0.16); /* deep — all active states */
+  --btn-shadow-none:   none;                               /* disabled */
+  --btn-padding-v:     8px;
+  --btn-padding-h:     24px;
+  --btn-font-size:     10px;
+  --btn-font-weight:   700;
+  --btn-font-family:   var(--font-family-brand);
+  --btn-height:        31px;
+
+  /* Button — Primary */
+  --btn-primary-bg:           #00bf6f;
+  --btn-primary-color:        #ffffff;
+  --btn-primary-border:       transparent;
+  --btn-primary-hover-bg:     #00bf6f;
+  --btn-primary-hover-border: #b2ffdd;
+  --btn-primary-focus-bg:     #049157;
+  --btn-primary-active-bg:    #0a5d3d;
+
+  /* Button — Secondary */
+  --btn-secondary-bg:           #ffffff;
+  --btn-secondary-color:        #00bf6f;
+  --btn-secondary-border:       #00bf6f;
+  --btn-secondary-hover-bg:     #d7ffed;
+  --btn-secondary-focus-border: #049157;
+  --btn-secondary-focus-color:  #049157;
+  --btn-secondary-active-bg:    #b2ffdd;
+
+  /* Button — Tertiary */
+  --btn-tertiary-bg:              #ffffff;
+  --btn-tertiary-color:           #212121;
+  --btn-tertiary-border:          transparent;
+  --btn-tertiary-hover-bg:        #dbdbdb;
+  --btn-tertiary-focus-border:    #dbdbdb;
+  --btn-tertiary-active-bg:       #c4c4c4;
+  --btn-tertiary-disabled-border: #c4c4c4;
+
+  /* --- Text Input Tokens --- */
+  --input-width:          311px;
+  --input-height:         46px;
+  --input-border-radius:  8px;
+  --input-border-width:   1px;
+  --input-padding-v:      12px;
+  --input-padding-h:      16px;
+  --input-icon-gap:       8px;
+  --input-icon-size:      16px;
+
+  --input-label-font-size:       14px;
+  --input-placeholder-font-size: 14px;
+  --input-hint-font-size:        10px;
+  --input-required-font-size:    12px;
+
+  /* Input — Light / Default */
+  --input-light-default-bg:          rgba(255, 255, 255, 0.30);
+  --input-light-default-border:      #c4c4c4;
+  --input-light-default-label:       #414141;
+  --input-light-default-placeholder: #dbdbdb;
+  --input-light-default-icon:        #c4c4c4;
+  --input-light-default-hint:        #414141;
+  --input-light-default-required:    #e53935;
+
+  /* Input — Light / Active */
+  --input-light-active-bg:          rgba(255, 255, 255, 0.30);
+  --input-light-active-border:      #989898;
+  --input-light-active-label:       #414141;
+  --input-light-active-placeholder: #414141;
+  --input-light-active-icon:        #989898;
+  --input-light-active-hint:        #414141;
+
+  /* Input — Light / Error */
+  --input-light-error-bg:          rgba(255, 255, 255, 0.30);
+  --input-light-error-border:      #e53935;
+  --input-light-error-label:       #414141;
+  --input-light-error-placeholder: #414141;
+  --input-light-error-icon:        #989898;
+  --input-light-error-hint:        #e53935;
+
+  /* Input — Light / Disabled */
+  --input-light-disabled-bg:          #dbdbdb;
+  --input-light-disabled-label:       #c4c4c4;
+  --input-light-disabled-placeholder: #989898;
+  --input-light-disabled-icon:        #989898;
+  --input-light-disabled-hint:        #c4c4c4;
+
+  /* --- Form Controls — Checkbox, Radio, Toggle --- */
+  --control-label-font-size:   12px;
+  --control-label-font-weight: 400;
+  --control-label-color:       #414141;
+  --control-gap:               8px;
+
+  /* Checkbox */
+  --checkbox-size:                   24px;
+  --checkbox-border-radius:          4px;
+  --checkbox-unchecked-border:       #989898;
+  --checkbox-unchecked-border-width: 1.5px;
+  --checkbox-checked-bg:             #00bf6f; /* Primary 300 — matches Radio + Toggle */
+  --checkbox-checkmark-color:        #ffffff;
+  --checkbox-checkmark-width:        14px;
+  --checkbox-checkmark-height:       8px;
+  --checkbox-checkmark-stroke:       2px;
+
+  /* Radiobutton */
+  --radio-size:                  20px;
+  --radio-dot-size:              8px;
+  --radio-unmarked-border:       #989898;
+  --radio-unmarked-border-width: 1.5px;
+  --radio-marked-bg:             #00bf6f; /* Primary 300 */
+  --radio-marked-dot-color:      #ffffff;
+
+  /* Toggle */
+  --toggle-track-width:  40px;
+  --toggle-track-height: 20px;
+  --toggle-track-radius: 10px;
+  --toggle-thumb-size:   14px;
+  --toggle-thumb-color:  #ffffff;
+  --toggle-thumb-offset: 3px;
+  --toggle-off-bg:       #dbdbdb;
+  --toggle-on-bg:        #00bf6f; /* Primary 300 */
+  --toggle-thumb-on-x:   calc(var(--toggle-track-width) - var(--toggle-thumb-size) - var(--toggle-thumb-offset));
+
+  /* --- Docusaurus (Infima) Overrides --- */
+  --ifm-color-primary:          var(--color-primary-300);
+  --ifm-color-primary-dark:     var(--color-primary-400);
+  --ifm-color-primary-darker:   var(--color-primary-400);
+  --ifm-color-primary-darkest:  var(--color-primary-500);
+  --ifm-color-primary-light:    var(--color-primary-200);
+  --ifm-color-primary-lighter:  var(--color-primary-200);
+  --ifm-color-primary-lightest: var(--color-primary-100);
+
+  --ifm-font-family-base: var(--font-family-brand);
+  --ifm-font-size-base:   var(--font-size-body-default);
+
+  --ifm-color-success: var(--color-success-300);
+  --ifm-color-info:    var(--color-info-300);
+  --ifm-color-warning: var(--color-alert-300);
+  --ifm-color-danger:  var(--color-danger-300);
+
+  --ifm-button-border-radius:      var(--btn-border-radius);
+  --ifm-button-padding-vertical:   var(--btn-padding-v);
+  --ifm-button-padding-horizontal: var(--btn-padding-h);
+  --ifm-button-font-size:          var(--btn-font-size);
+
+/* --- Dropdown --- */
+  --dropdown-width:          311px;
+  --dropdown-item-height:    34px;
+  --dropdown-border-radius:  8px;
+  --dropdown-padding-v:      8px;
+  --dropdown-padding-h:      12px;
+  --dropdown-icon-size:      14px;
+  --dropdown-icon-gap:       10px;
+  --dropdown-font-size:      12px;
+  --dropdown-font-weight:    300;
+  --dropdown-text-color:     #000000;
+  --dropdown-bg:             #ffffff;
+  --dropdown-selected-bg:    #f4f4f4;
+  --dropdown-shadow:         0 4px 12px 0 rgba(0, 0, 0, 0.16);
+
+  /* --- Side Menu --- */
+  --side-menu-width:          358px;
+  --side-menu-height:         65px;
+  --side-menu-padding-v:      20px;
+  --side-menu-padding-h:      16px;
+  --side-menu-icon-size:      16px;
+  --side-menu-gap:            12px;
+  --side-menu-font-size:      14px;
+  --side-menu-font-weight:    400;
+  --side-menu-color:          #414141;
+  --side-menu-divider:        #dbdbdb;
+  --side-menu-divider-height: 1px;
+
+  /* --- Tabs --- */
+--tab-height:           34px;
+--tab-padding-v:        8px;
+--tab-padding-h:        16px;
+--tab-border-radius:    8px;
+--tab-container-bg:     #f4f4f4;
+--tab-active-bg:        #ffffff;
+--tab-active-border:    #414141;
+--tab-active-color:     #414141;
+--tab-active-shadow:    0 4px 12px 0 rgba(0, 0, 0, 0.16);
+--tab-inactive-color:   #000000;
+--tab-android-active:   #ea6753;
+}
+
+/* --------------------------------------------------------------------------
+   3. DESIGN TOKENS — Dark Mode Overrides
+   -------------------------------------------------------------------------- */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary:           var(--color-primary-200);
+  --ifm-background-color:        var(--color-neutral-500);
+  --ifm-navbar-background-color: var(--color-neutral-1000);
+
+  /* Input overrides — Dark */
+  --input-light-default-border:      #989898;
+  --input-light-default-label:       #ffffff;
+  --input-light-default-placeholder: #989898;
+  --input-light-default-icon:        #c4c4c4;
+  --input-light-default-hint:        #dbdbdb;
+
+  --input-light-active-border:      #dbdbdb;
+  --input-light-active-label:       #ffffff;
+  --input-light-active-placeholder: #ffffff;
+  --input-light-active-icon:        #dbdbdb;
+  --input-light-active-hint:        #dbdbdb;
+
+  --input-light-error-border:      #e53935;
+  --input-light-error-label:       #ffffff;
+  --input-light-error-placeholder: #ffffff;
+  --input-light-error-hint:        #e53935;
+
+  --input-light-disabled-bg:          #414141; /* Neutral 400 — perceivable on dark bg */
+  --input-light-disabled-label:       #414141;
+  --input-light-disabled-placeholder: #989898;
+  --input-light-disabled-icon:        #989898;
+  --input-light-disabled-hint:        #414141;
+}
+
+/* --------------------------------------------------------------------------
+   4. BUTTON COMPONENT STYLES
+   -------------------------------------------------------------------------- */
+
+/* --- Base --- */
+.busup-btn {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  gap:             var(--spacing-xs);
+  height:          var(--btn-height);
+  padding:         var(--btn-padding-v) var(--btn-padding-h);
+  border-radius:   var(--btn-border-radius);
+  border:          1.5px solid transparent;
+  font-family:     var(--btn-font-family);
+  font-size:       var(--btn-font-size);
+  font-weight:     var(--btn-font-weight);
+  line-height:     1;
+  cursor:          pointer;
+  text-transform:  uppercase;
+  letter-spacing:  0.5px;
+  transition:      background 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  user-select:     none;
+  text-decoration: none;
+}
+
+/* --- Primary --- */
+.busup-btn--primary {
+  background:   var(--btn-primary-bg);
+  color:        var(--btn-primary-color);
+  border-color: var(--btn-primary-border);
+  box-shadow:   var(--btn-shadow); /* ← was btn-shadow-none */
+}
+.busup-btn--primary:hover {
+  background:   var(--btn-primary-hover-bg);
+  border-color: var(--btn-primary-hover-border);
+  box-shadow:   var(--btn-shadow);
+}
+.busup-btn--primary:focus,
+.busup-btn--primary:focus-visible {
+  background:   var(--btn-primary-focus-bg);
+  border-color: var(--btn-primary-hover-border);
+  box-shadow:   var(--btn-shadow);
+  outline:      none;
+}
+.busup-btn--primary:active {
+  background: var(--btn-primary-active-bg);
+  box-shadow: var(--btn-shadow);
+}
+.busup-btn--primary:disabled,
+.busup-btn--primary.is-disabled {
+  background:  var(--color-neutral-100);
+  color:       var(--color-neutral-300);
+  box-shadow:  var(--btn-shadow-none);
+  cursor:      not-allowed;
+  border-color: transparent;
+}
+
+/* --- Secondary --- */
+.busup-btn--secondary {
+  background:   var(--btn-secondary-bg);
+  color:        var(--btn-secondary-color);
+  border-color: var(--btn-secondary-border);
+  box-shadow:   var(--btn-shadow-none);
+}
+.busup-btn--secondary:hover {
+  background: var(--btn-secondary-hover-bg);
+  box-shadow: var(--btn-shadow);
+}
+.busup-btn--secondary:focus,
+.busup-btn--secondary:focus-visible {
+  border-color: var(--btn-secondary-focus-border);
+  color:        var(--btn-secondary-focus-color);
+  box-shadow:   var(--btn-shadow);
+  outline:      none;
+}
+.busup-btn--secondary:active {
+  background: var(--btn-secondary-active-bg);
+  box-shadow: var(--btn-shadow);
+}
+.busup-btn--secondary:disabled,
+.busup-btn--secondary.is-disabled {
+  background:  var(--color-neutral-0);
+  color:       var(--color-neutral-200);
+  border-color: var(--color-neutral-200);
+  box-shadow:  var(--btn-shadow-none);
+  cursor:      not-allowed;
+}
+
+/* --- Tertiary --- */
+.busup-btn--tertiary {
+  background:   var(--btn-tertiary-bg);
+  color:        var(--btn-tertiary-color);
+  border-color: var(--btn-tertiary-border);
+  box-shadow:   var(--btn-shadow); /* ← was btn-shadow-none */
+}
+.busup-btn--tertiary:hover {
+  background: var(--btn-tertiary-hover-bg);
+  box-shadow: var(--btn-shadow);
+}
+.busup-btn--tertiary:focus,
+.busup-btn--tertiary:focus-visible {
+  border-color: var(--btn-tertiary-focus-border);
+  box-shadow:   var(--btn-shadow);
+  outline:      none;
+}
+.busup-btn--tertiary:active {
+  background: var(--btn-tertiary-active-bg);
+  box-shadow: var(--btn-shadow);
+}
+.busup-btn--tertiary:disabled,
+.busup-btn--tertiary.is-disabled {
+  background:  var(--color-neutral-0);
+  color:       var(--color-neutral-200);
+  border-color: var(--btn-tertiary-disabled-border);
+  box-shadow:  var(--btn-shadow-none);
+  cursor:      not-allowed;
+}
+
+/* --------------------------------------------------------------------------
+   5. TEXT INPUT COMPONENT STYLES
+   -------------------------------------------------------------------------- */
+.busup-input-wrapper {
+  display:        flex;
+  flex-direction: column;
+  gap:            4px;
+  width:          var(--input-width);
+}
+
+.busup-input-label {
+  font-family: var(--font-family-brand);
+  font-size:   var(--input-label-font-size);
+  font-weight: var(--font-weight-regular);
+  color:       var(--input-light-default-label);
+}
+
+.busup-input-label .required-mark {
+  color:      var(--input-light-default-required);
+  font-size:  var(--input-required-font-size);
+  margin-left: 2px;
+}
+
+.busup-input-field {
+  display:        flex;
+  align-items:    center;
+  gap:            var(--input-icon-gap);
+  height:         var(--input-height);
+  padding:        var(--input-padding-v) var(--input-padding-h);
+  border-radius:  var(--input-border-radius);
+  border:         var(--input-border-width) solid var(--input-light-default-border);
+  background:     var(--input-light-default-bg);
+  font-family:    var(--font-family-brand);
+  font-size:      var(--input-placeholder-font-size);
+  color:          var(--input-light-default-placeholder);
+  transition:     border-color 0.15s ease, background 0.15s ease;
+  box-sizing:     border-box;
+}
+
+.busup-input-field--active {
+  border-color: var(--input-light-active-border);
+  color:        var(--input-light-active-placeholder);
+}
+
+.busup-input-field--error {
+  border-color: var(--input-light-error-border);
+  color:        var(--input-light-error-placeholder);
+}
+
+.busup-input-field--disabled {
+  background:  var(--input-light-disabled-bg);
+  border-color: transparent;
+  color:        var(--input-light-disabled-placeholder);
+  cursor:       not-allowed;
+}
+
+.busup-input-icon {
+  width:     var(--input-icon-size);
+  height:    var(--input-icon-size);
+  color:     var(--input-light-default-icon);
+  flex-shrink: 0;
+}
+
+.busup-input-hint {
+  font-family: var(--font-family-brand);
+  font-size:   var(--input-hint-font-size);
+  color:       var(--input-light-default-hint);
+}
+
+.busup-input-hint--error {
+  color: var(--input-light-error-hint);
+}
+
+/* --------------------------------------------------------------------------
+   6. FORM CONTROLS — Checkbox, Radiobutton, Toggle
+   -------------------------------------------------------------------------- */
+
+/* --- Shared control row --- */
+.busup-control {
+  display:     inline-flex;
+  align-items: center;
+  gap:         var(--control-gap);
+  cursor:      pointer;
+  user-select: none;
+}
+
+.busup-control__label {
+  font-family: var(--font-family-brand);
+  font-size:   var(--control-label-font-size);
+  font-weight: var(--control-label-font-weight);
+  color:       var(--control-label-color);
+  line-height: var(--line-height-body);
+}
+
+/* --- Checkbox --- */
+.busup-checkbox {
+  appearance:    none;
+  -webkit-appearance: none;
+  width:         var(--checkbox-size);
+  height:        var(--checkbox-size);
+  border-radius: var(--checkbox-border-radius);
+  border:        var(--checkbox-unchecked-border-width) solid var(--checkbox-unchecked-border);
+  background:    transparent;
+  cursor:        pointer;
+  flex-shrink:   0;
+  position:      relative;
+  transition:    background 0.15s ease, border-color 0.15s ease;
+}
+
+.busup-checkbox:checked {
+  background:   var(--checkbox-checked-bg);
+  border-color: var(--checkbox-checked-bg);
+}
+
+.busup-checkbox:checked::after {
+  content:    '';
+  position:   absolute;
+  left:       50%;
+  top:        42%;
+  transform:  translate(-50%, -50%) rotate(-45deg);
+  width:      var(--checkbox-checkmark-width);
+  height:     var(--checkbox-checkmark-height);
+  border-left:   var(--checkbox-checkmark-stroke) solid var(--checkbox-checkmark-color);
+  border-bottom: var(--checkbox-checkmark-stroke) solid var(--checkbox-checkmark-color);
+}
+
+/* --- Radiobutton --- */
+.busup-radio {
+  appearance:    none;
+  -webkit-appearance: none;
+  width:         var(--radio-size);
+  height:        var(--radio-size);
+  border-radius: 50%;
+  border:        var(--radio-unmarked-border-width) solid var(--radio-unmarked-border);
+  background:    transparent;
+  cursor:        pointer;
+  flex-shrink:   0;
+  position:      relative;
+  transition:    background 0.15s ease, border-color 0.15s ease;
+}
+
+.busup-radio:checked {
+  background:   var(--radio-marked-bg);
+  border-color: var(--radio-marked-bg);
+}
+
+.busup-radio:checked::after {
+  content:       '';
+  position:      absolute;
+  inset:         0;
+  margin:        auto;
+  width:         var(--radio-dot-size);
+  height:        var(--radio-dot-size);
+  border-radius: 50%;
+  background:    var(--radio-marked-dot-color);
+}
+
+/* --- Toggle --- */
+.busup-toggle {
+  appearance:    none;
+  -webkit-appearance: none;
+  width:         var(--toggle-track-width);
+  height:        var(--toggle-track-height);
+  border-radius: var(--toggle-track-radius);
+  background:    var(--toggle-off-bg);
+  cursor:        pointer;
+  flex-shrink:   0;
+  position:      relative;
+  transition:    background 0.2s ease;
+}
+
+.busup-toggle::after {
+  content:       '';
+  position:      absolute;
+  top:           var(--toggle-thumb-offset);
+  left:          var(--toggle-thumb-offset);
+  width:         var(--toggle-thumb-size);
+  height:        var(--toggle-thumb-size);
+  border-radius: 50%;
+  background:    var(--toggle-thumb-color);
+  box-shadow:    0 2px 8px 0 rgba(0, 0, 0, 0.08); /* shadow-soft from Figma */
+  transition:    transform 0.2s ease;
+}
+
+.busup-toggle:checked {
+  background: var(--toggle-on-bg);
+}
+
+.busup-toggle:checked::after {
+  transform: translateX(var(--toggle-thumb-on-x));
+}
+
+/* --- Disabled state — all controls --- */
+.busup-control:has(.busup-checkbox:disabled),
+.busup-control:has(.busup-radio:disabled),
+.busup-control:has(.busup-toggle:disabled) {
+  opacity: 0.40;
+  cursor: not-allowed;
+}
+
+/* --------------------------------------------------------------------------
+   7. SIDE MENU COMPONENT STYLES
+   -------------------------------------------------------------------------- */
+.busup-side-menu-item {
+  display:         flex;
+  align-items:     center;
+  gap:             var(--side-menu-gap);
+  width:           var(--side-menu-width);
+  height:          var(--side-menu-height);
+  padding:         var(--side-menu-padding-v) var(--side-menu-padding-h);
+  border-bottom:   var(--side-menu-divider-height) solid var(--side-menu-divider);
+  box-sizing:      border-box;
+  cursor:          pointer;
+  transition:      background 0.15s ease;
+}
+
+.busup-side-menu-item:hover {
+  background: var(--color-neutral-50);
+}
+
+.busup-side-menu-item__label {
+  flex:          1;
+  font-family:   var(--font-family-brand);
+  font-size:     var(--side-menu-font-size);
+  font-weight:   var(--side-menu-font-weight);
+  color:         var(--side-menu-color);
+  line-height:   var(--line-height-body);
+  white-space:   nowrap;
+  overflow:      hidden;
+  text-overflow: ellipsis;
+}
+
+.busup-side-menu-item__icon {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  width:           var(--side-menu-icon-size);
+  height:          var(--side-menu-icon-size);
+  flex-shrink:     0;
+  color:           var(--side-menu-color);
 }
