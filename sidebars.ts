@@ -21,6 +21,7 @@ const sidebars: SidebarsConfig = {
         'buttons',
         { type: 'doc', id: 'inputs', label: 'Text input' },
         { type: 'doc', id: 'form-controls', label: 'Form Controls' },
+        { type: 'doc', id: 'feedback-modals', label: 'Feedback Modals' },
         { type: 'doc', id: 'side-menu', label: 'Side Menu' },
         { type: 'doc', id: 'tabs', label: 'Tabs' },
       ],
