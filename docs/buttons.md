@@ -102,6 +102,90 @@ Our three main types of action.
 
 ---
 
+## When to Use Each Variant
+
+| Variant | Use when… | Avoid when… |
+|:---|:---|:---|
+| **Primary** | The action is the main goal of the screen (Confirm, Pay, Submit) | There are already other Primary buttons in the same context |
+| **Secondary** | The action complements or offers an alternative to Primary (Edit, Clear) | The action is the main goal — promote it to Primary |
+| **Tertiary** | The action is an escape or low-priority option (Cancel, Go back, See more) | The action needs strong visual weight — use Secondary instead |
+
+---
+
+## Dos & Don'ts
+
+### Hierarchy
+
+<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '32px'}}>
+
+  <div style={{background: 'var(--ifm-color-success-contrast-background)', border: '1px solid var(--ifm-color-success)', borderRadius: '8px', padding: '20px'}}>
+    <p style={{fontSize: '12px', fontWeight: 700, color: 'var(--ifm-color-success-dark)', marginBottom: '12px', marginTop: 0}}>✅ DO</p>
+    <div style={{display: 'flex', gap: '8px', marginBottom: '16px', flexWrap: 'wrap'}}>
+      <button className="busup-btn busup-btn--tertiary">Cancel</button>
+      <button className="busup-btn busup-btn--secondary">Save draft</button>
+      <button className="busup-btn busup-btn--primary">Confirm</button>
+    </div>
+    <p style={{fontSize: '12px', color: 'var(--ifm-font-color-base)', margin: 0}}>Use one Primary per context. Place it rightmost, with lower-hierarchy actions to its left.</p>
+  </div>
+
+  <div style={{background: 'var(--ifm-color-danger-contrast-background)', border: '1px solid var(--ifm-color-danger)', borderRadius: '8px', padding: '20px'}}>
+    <p style={{fontSize: '12px', fontWeight: 700, color: 'var(--ifm-color-danger-dark)', marginBottom: '12px', marginTop: 0}}>❌ DON'T</p>
+    <div style={{display: 'flex', gap: '8px', marginBottom: '16px', flexWrap: 'wrap'}}>
+      <button className="busup-btn busup-btn--primary">Cancel</button>
+      <button className="busup-btn busup-btn--primary">Save draft</button>
+      <button className="busup-btn busup-btn--primary">Confirm</button>
+    </div>
+    <p style={{fontSize: '12px', color: 'var(--ifm-font-color-base)', margin: 0}}>Don't use multiple Primary buttons in the same context. It removes visual hierarchy and confuses the user about what to do next.</p>
+  </div>
+
+</div>
+
+### Labels
+
+<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '32px'}}>
+
+  <div style={{background: 'var(--ifm-color-success-contrast-background)', border: '1px solid var(--ifm-color-success)', borderRadius: '8px', padding: '20px'}}>
+    <p style={{fontSize: '12px', fontWeight: 700, color: 'var(--ifm-color-success-dark)', marginBottom: '12px', marginTop: 0}}>✅ DO</p>
+    <div style={{display: 'flex', gap: '8px', marginBottom: '16px', flexWrap: 'wrap'}}>
+      <button className="busup-btn busup-btn--primary">Confirm booking</button>
+      <button className="busup-btn busup-btn--secondary">Save changes</button>
+    </div>
+    <p style={{fontSize: '12px', color: 'var(--ifm-font-color-base)', margin: 0}}>Use action verbs in sentence case that describe the outcome. Be specific about what happens when the user clicks.</p>
+  </div>
+
+  <div style={{background: 'var(--ifm-color-danger-contrast-background)', border: '1px solid var(--ifm-color-danger)', borderRadius: '8px', padding: '20px'}}>
+    <p style={{fontSize: '12px', fontWeight: 700, color: 'var(--ifm-color-danger-dark)', marginBottom: '12px', marginTop: 0}}>❌ DON'T</p>
+    <div style={{display: 'flex', gap: '8px', marginBottom: '16px', flexWrap: 'wrap'}}>
+      <button className="busup-btn busup-btn--primary">OK</button>
+      <button className="busup-btn busup-btn--secondary">CLICK HERE</button>
+    </div>
+    <p style={{fontSize: '12px', color: 'var(--ifm-font-color-base)', margin: 0}}>Avoid vague labels like "OK" or "Yes". Never use ALL CAPS — it feels aggressive and breaks the visual style of the system.</p>
+  </div>
+
+</div>
+
+### Disabled State
+
+<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '32px'}}>
+
+  <div style={{background: 'var(--ifm-color-success-contrast-background)', border: '1px solid var(--ifm-color-success)', borderRadius: '8px', padding: '20px'}}>
+    <p style={{fontSize: '12px', fontWeight: 700, color: 'var(--ifm-color-success-dark)', marginBottom: '12px', marginTop: 0}}>✅ DO</p>
+    <div style={{display: 'flex', gap: '8px', marginBottom: '16px', flexWrap: 'wrap'}}>
+      <button className="busup-btn busup-btn--primary" disabled>Confirm</button>
+    </div>
+    <p style={{fontSize: '12px', color: 'var(--ifm-font-color-base)', margin: 0}}>Keep the button visible but disabled when the action is temporarily unavailable. This tells the user the action exists — just not yet.</p>
+  </div>
+
+  <div style={{background: 'var(--ifm-color-danger-contrast-background)', border: '1px solid var(--ifm-color-danger)', borderRadius: '8px', padding: '20px'}}>
+    <p style={{fontSize: '12px', fontWeight: 700, color: 'var(--ifm-color-danger-dark)', marginBottom: '12px', marginTop: 0}}>❌ DON'T</p>
+    <div style={{display: 'flex', gap: '8px', marginBottom: '16px', flexWrap: 'wrap', opacity: 0.4}}>
+      <span style={{fontSize: '12px', fontStyle: 'italic', color: 'var(--ifm-font-color-base)'}}>[Button hidden from view]</span>
+    </div>
+    <p style={{fontSize: '12px', color: 'var(--ifm-font-color-base)', margin: 0}}>Don't hide a button because it's unavailable. Hiding it causes confusion — the user doesn't know if the action exists at all.</p>
+  </div>
+
+</div>
+
 ## Best Practices
 
 **Hierarchy & Placement**

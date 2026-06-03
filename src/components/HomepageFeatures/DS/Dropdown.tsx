@@ -7,6 +7,7 @@ interface DropdownProps {
   hint?: string;
   required?: boolean;
   state?: 'default' | 'disabled';
+  defaultValue?: string;
 }
 
 export const Dropdown = ({
@@ -16,9 +17,10 @@ export const Dropdown = ({
   hint,
   required,
   state = 'default',
+  defaultValue,
 }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState<string | null>(null);
+  const [selected, setSelected] = useState<string | null>(defaultValue || null);
   const [mounted, setMounted] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -80,7 +82,7 @@ export const Dropdown = ({
         </div>
       )}
 
-      {/* Trigger — same styling as Text Input */}
+      {/* Trigger */}
       <div
         onClick={() => mounted && !isDisabled && setIsOpen((prev) => !prev)}
         role="combobox"
@@ -118,7 +120,7 @@ export const Dropdown = ({
           {selected || placeholder}
         </span>
 
-        {/* Chevron icon — right side */}
+        {/* Chevron icon — right slot */}
         <svg
           width="16"
           height="16"
