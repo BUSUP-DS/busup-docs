@@ -14,9 +14,8 @@ const typeConfig = {
     color: '#00bf6f',
     icon: (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="32" cy="32" r="32" fill="#d7ffed" />
-        <circle cx="32" cy="32" r="24" fill="none" stroke="#00bf6f" strokeWidth="2" />
-        <path d="M22 32l7 7 13-13" stroke="#00bf6f" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="32" cy="32" r="30" fill="#edfff6" stroke="#b2ffdd" strokeWidth="1.5" />
+        <path d="M20 33l8 8 16-16" stroke="#00bf6f" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
   },
@@ -24,10 +23,9 @@ const typeConfig = {
     color: '#ffa000',
     icon: (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="32" cy="32" r="32" fill="#fff8e1" />
-        <circle cx="32" cy="32" r="24" fill="none" stroke="#ffa000" strokeWidth="2" />
-        <path d="M32 22v14" stroke="#ffa000" strokeWidth="2.5" strokeLinecap="round" />
-        <circle cx="32" cy="41" r="1.5" fill="#ffa000" />
+        <circle cx="32" cy="32" r="30" fill="#fff8e6" stroke="#ffe0b2" strokeWidth="1.5" />
+        <path d="M32 20v16" stroke="#ffa000" strokeWidth="3" strokeLinecap="round" />
+        <circle cx="32" cy="43" r="2.5" fill="#ffa000" />
       </svg>
     ),
   },
@@ -35,9 +33,8 @@ const typeConfig = {
     color: '#e53935',
     icon: (
       <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="32" cy="32" r="32" fill="#ffebee" />
-        <circle cx="32" cy="32" r="24" fill="none" stroke="#e53935" strokeWidth="2" />
-        <path d="M24 24l16 16M40 24L24 40" stroke="#e53935" strokeWidth="2.5" strokeLinecap="round" />
+        <circle cx="32" cy="32" r="30" fill="#ffebee" stroke="#ffcdd2" strokeWidth="1.5" />
+        <path d="M22 22l20 20M42 22L22 42" stroke="#e53935" strokeWidth="3" strokeLinecap="round" />
       </svg>
     ),
   },
