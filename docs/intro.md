@@ -28,9 +28,9 @@ This documentation is **AI-driven** and follows a modern design-to-code pipeline
 
 ## 🚀 Getting Started
 
-If you are a **Developer**, check our [Design Tokens](./design-tokens/colors) to start using our variables.
+If you are a **Developer**, check our [Design Tokens](./foundation/design-tokens/colors) to start using our variables.
 
-If you are a **Designer**, ensure you are using the latest version of our [Figma Library](https://www.figma.com/design/D2qZyPt7FCRYFTOeW99LVy/APP?node-id=8744-9409&t=38URR2vlwSJ60yaF-4).
+If you are a **Designer**, ensure you are using the latest version of our [Figma Library](https://www.figma.com/design/8qxz2HkWpKhLABlai8bLVZ/NEW-LIBRARY?node-id=0-1).
 
 <br />
 ---
