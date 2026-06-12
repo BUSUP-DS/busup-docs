@@ -17,6 +17,8 @@ Full interactive documentation: https://busup-ds.github.io/busup-docs
 8. [Layout — Dashboard](#layout--dashboard)
 9. [Components — Dashboard](#components--dashboard)
 10. [Components — App User](#components--app-user)
+11. [Components — App Driver](#components--app-driver)
+12. [Components — Landings](#components--landings)
 
 ---
 
@@ -471,6 +473,215 @@ Semantic colour-coded labels for status communication.
 | Large | `56px` |
 
 Border radius: `50%`. Fallback: initials on `#d7ffed` background with `#00BF6F` text.
+
+---
+
+---
+
+## Components — App Driver
+
+App Driver is mobile-only. Shares all foundation tokens and most components with App User. Unique components below.
+
+### Welcome Header
+
+Greeting shown on the home screen when the driver opens the app.
+
+| Property | Value |
+|:---|:---|
+| Background | `#d7ffed` (Primary_100) |
+| Border radius | `16px` |
+| Padding | `28px 32px` |
+| Title | `29px Bold #414141`, line-height `1.2` |
+| Subtitle | `20px Regular #414141`, line-height `1.5` |
+| Gap | `4px` |
+
+---
+
+### Route Components
+
+**Route Path** — vertical stop sequence showing driver progress.
+
+| State | Dot/track colour |
+|:---|:---|
+| Not started | `#c4c4c4` |
+| Current | `#00bf6f` |
+| Completed | `#616161` |
+
+| Property | Value |
+|:---|:---|
+| Track width | `2px` |
+| Dot size | `12px` diameter |
+| Stop name — current | `14px Bold #212121` |
+| Stop name — other | `14px Regular #989898 / #212121` |
+| ETA | `11px Regular #00bf6f` (active) · `#616161` (completed) |
+
+**Route Detail Card** — tooltip on stop tap.
+
+| Property | Value |
+|:---|:---|
+| Background | `#ffffff` |
+| Border | `1px solid #dbdbdb` |
+| Border radius | `8px` |
+| Shadow | `shadow-soft` |
+| Padding | `8px 12px` |
+
+---
+
+### Incidence Modals
+
+Two variants triggered from the active route view.
+
+| Variant | Input |
+|:---|:---|
+| Comment | Free-text textarea |
+| Type select | Dropdown (Defeito mecânico · Defeito elétrico · Via obstruída · Acidente na via) |
+
+| Property | Value |
+|:---|:---|
+| Width | `320px` |
+| Padding | `24px 20px 16px` |
+| Border radius | `8px` |
+| Shadow | `shadow-deep` |
+| Title | `"Feedback" · 16px Bold #212121` |
+| Cancel button | `white · 1px solid #00bf6f · 13px Bold green` |
+| Submit button | `#00bf6f · 13px Bold white` |
+
+After the driver sets the boarding count, a **confirmation modal** appears before the count is submitted.
+
+---
+
+### Passenger Information
+
+Read-only list of booked passengers per stop.
+
+| Property | Value |
+|:---|:---|
+| Row padding | `8px 12px` |
+| Row divider | `1px solid #f4f4f4` |
+| Avatar | `32px · #d7ffed bg · #00bf6f initials · 12px Bold` |
+| Name | `13px Bold #212121` |
+| Party count | `11px Regular #989898` |
+| Badge padding | `3px 8px · border-radius 4px` |
+
+Status values: Pending · Boarding · Boarded · Absent. List is read-only — not interactive.
+
+---
+
+### Manual Boarding Control
+
+Large-target counter for recording boardings at a stop.
+
+| Property | Value |
+|:---|:---|
+| Container | `#989898 · border-radius 30px · 279 × 141px` |
+| Disabled | `30% opacity` |
+| − / + buttons | `white · 44 × 44px · border-radius 16px · shadow-deep` |
+| Counter circle | `56 × 56px · rgba(255,255,255,0.2) · shadow-soft` |
+| Counter text | `35px Bold white · shadow-deep` |
+| Label "Boarding" | `14px Regular white` |
+
+After setting the count, a confirmation modal appears before submission.
+
+---
+
+### On Demand Control
+
+Toggle card for accepting or pausing on-demand ride requests.
+
+| Property | Value |
+|:---|:---|
+| Background | `#f4f4f4` |
+| Border | `1px solid rgba(0,191,111,0.3)` |
+| Border radius | `12px` |
+| Padding | `9px 21px` |
+| Width | `355px` |
+| Title | `16px Bold #414141` |
+| Helper text | `12px Regular #989898` |
+| Toggle ON | `#00bf6f` track |
+| Toggle OFF | `#c4c4c4` track |
+
+---
+
+## Components — Landings
+
+Landings is the desktop-first public web app. Shares foundation tokens and most components with App User.
+
+### Navigation Header
+
+Persistent top bar on all Landings pages.
+
+| Property | Value |
+|:---|:---|
+| Background | `#00bf6f` (Primary_300) |
+| Height | `67px` |
+| Nav item padding | `0 24px` |
+| Active nav | `14px Bold white` |
+| Inactive nav | `14px Regular #049157` (Primary_400) |
+| Language / User | `14px Regular white` |
+
+Nav items: **Search routes** · My bookings · For companies. Header is fixed — stays at top on scroll.
+
+---
+
+### Search Bar *(not yet implemented)*
+
+Route search form — primary action on the home page.
+
+| Field | Required | Icon |
+|:---|:---|:---|
+| Origin | Yes | — |
+| Destination | Yes | — |
+| Date | No | Calendar |
+| Time | No | Calendar |
+
+| Property | Value |
+|:---|:---|
+| Container | `white · border-radius 8px · shadow-soft · padding 20px 24px` |
+| Field border | `1px solid #989898 · border-radius 8px` |
+| Field background | `rgba(255,255,255,0.3)` |
+| Field padding | `12px 16px` |
+| Label | `16px Regular #414141` |
+| Required `*` | `12px #e53935` |
+| Search button | `#00bf6f · 14px Bold white · border-radius 20px · shadow-deep` |
+
+Clicking **Date** opens the Calendar Modal. Required fields show error state on submit if empty.
+
+---
+
+### Title *(shared — Landings + Dashboard)*
+
+Named typographic styles for section headings.
+
+| Variant | Size | Weight | Line-height |
+|:---|:---|:---|:---|
+| 24px regular | `24px` | 400 | `1.2` |
+| 20px regular | `20px` | 400 | `1.5` |
+| 16px regular | `16px` | 400 | `1.5` |
+| 24px bold | `24px` | 700 | `1.2` |
+| 20px bold | `20px` | 700 | `1.5` |
+| 16px bold | `16px` | 700 | `1.5` |
+
+All variants: `#000000 · "Busup Sans"`.
+
+---
+
+### Calendar Modal
+
+Date picker that opens from the Search Bar Date field.
+
+| Property | Value |
+|:---|:---|
+| Background | `#ffffff` |
+| Width | `305px` |
+| Border radius | `8px` |
+| Shadow | `shadow-deep` |
+| Month label | `14px Bold #414141` |
+| Day headers | `14px Light #212121` |
+| Day numbers | `12px Light #414141` |
+| Outside-month days | `12px Light #dbdbdb` — not interactive |
+| Selected circle | `24px diameter · #00bf6f` |
+| Selected text | `12px Bold white` |
+| Apply button | `#00bf6f · 10px Bold white · border-radius 20px · shadow-deep` |
 
 ---
 
