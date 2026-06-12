@@ -9,6 +9,8 @@ import { NavigationBarDemo } from '@site/src/components/HomepageFeatures/DS/Navi
 
 <NavigationBarDemo />
 
+<div style={{marginBottom: "40px"}} />
+
 Navigation Bar is the main navigation bar of the App User, fixed at the bottom of the screen. It allows the user to move between the app's primary sections. In BUSUP it has 6 states, each representing the active section:
 
 - **Home**

@@ -9,6 +9,8 @@ import { SegmentedControlDemo } from '@site/src/components/HomepageFeatures/DS/S
 
 <SegmentedControlDemo />
 
+<div style={{marginBottom: "40px"}} />
+
 ---
 
 Segmented Control is a selector for mutually exclusive options presented in a row, where only one option can be active at a time. It has two item variants:

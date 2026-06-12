@@ -9,6 +9,8 @@ import { CardsDemo } from '@site/src/components/HomepageFeatures/DS/Cards';
 
 <CardsDemo />
 
+<div style={{marginBottom: "40px"}} />
+
 Card is a container that groups related information about an entity — a booking, a route — on a delimited surface. In App User it has two variants:
 
 - **Bookings Card** — displays information about a user's booking

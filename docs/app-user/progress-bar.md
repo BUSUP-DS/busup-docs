@@ -9,6 +9,8 @@ import { ProgressBarDemo } from '@site/src/components/HomepageFeatures/DS/Progre
 
 <ProgressBarDemo />
 
+<div style={{marginBottom: "40px"}} />
+
 :::info
 The Progress Bar is defined in the Figma library but **is not currently applied in App User**. The use cases documented here are a reference for future implementations or use in other products such as the Dashboard.
 :::

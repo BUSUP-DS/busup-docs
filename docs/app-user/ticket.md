@@ -9,6 +9,8 @@ import { TicketDemo } from '@site/src/components/HomepageFeatures/DS/Ticket';
 
 <TicketDemo />
 
+<div style={{marginBottom: "40px"}} />
+
 Ticket is the component that represents the user's boarding pass. Its content and structure vary according to **connectivity**, **booking availability**, and **operator configuration**. It always displays a QR Code when possible — even without an active booking, depending on the operator's settings.
 
 ---

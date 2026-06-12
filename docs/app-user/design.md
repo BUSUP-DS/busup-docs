@@ -43,9 +43,9 @@ Figma Library  →  Claude + MCP  →  Docusaurus  →  GitHub Pages
 
 | Token | Status | Description |
 |:---|:---|:---|
-| [Colors](/docs/design-tokens/colors) | ✅ Documented | Brand, feedback, and neutral color scales |
-| [Spacing](/docs/design-tokens/spacing) | ✅ Documented | Spacing scale used across all components |
-| [Typography](/docs/typography) | ✅ Documented | Busup Sans — heading and body type scales |
+| [Colors](/docs/foundation/design-tokens/colors) | ✅ Documented | Brand, feedback, and neutral color scales |
+| [Spacing](/docs/foundation/design-tokens/spacing) | ✅ Documented | Spacing scale used across all components |
+| [Typography](/docs/foundation/typography) | ✅ Documented | Busup Sans — heading and body type scales |
 | Elevation | 🔜 Pending | Shadow levels — defined in Figma, not yet documented |
 | Iconography | 🔜 Pending | Icon library — defined in Figma, not yet documented |
 
@@ -55,12 +55,12 @@ Figma Library  →  Claude + MCP  →  Docusaurus  →  GitHub Pages
 
 | Component | Status | Variants | Compositions |
 |:---|:---|:---|:---|
-| [Buttons](/docs/buttons) | ✅ Documented | Primary, Secondary, Tertiary | — |
-| [Text Input](/docs/inputs) | ✅ Documented | Default, Active, Error, Disabled | Dropdown (single + multi-select), Phone, File Upload |
-| [Form Controls](/docs/form-controls) | ✅ Documented | Checkbox, Radiobutton, Toggle | Groups, table rows, toggle with subtitle |
-| [Feedback Modals](/docs/feedback-modals) | ✅ Documented | Simple, Full | Success, Alert, Error |
-| [Side Menu](/docs/side-menu) | ✅ Documented | Default, Disabled | — |
-| [Tabs](/docs/tabs) | ✅ Documented | iOS, Android | — |
+| [Buttons](/docs/app-user/buttons) | ✅ Documented | Primary, Secondary, Tertiary | — |
+| [Text Input](/docs/app-user/inputs) | ✅ Documented | Default, Active, Error, Disabled | Dropdown (single + multi-select), Phone, File Upload |
+| [Form Controls](/docs/app-user/form-controls) | ✅ Documented | Checkbox, Radiobutton, Toggle | Groups, table rows, toggle with subtitle |
+| [Feedback Modals](/docs/app-user/feedback-modals) | ✅ Documented | Simple, Full | Success, Alert, Error |
+| [Side Menu](/docs/app-user/side-menu) | ✅ Documented | Default, Disabled | — |
+| [Tabs](/docs/app-user/tabs) | ✅ Documented | iOS, Android | — |
 | Avatar | 🔜 Pending | — | — |
 | Badge | 🔜 Pending | — | — |
 | Code Input | 🔜 Pending | — | — |

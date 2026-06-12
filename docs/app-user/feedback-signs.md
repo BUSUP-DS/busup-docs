@@ -9,6 +9,8 @@ import { FeedbackSignsDemo } from '@site/src/components/HomepageFeatures/DS/Feed
 
 <FeedbackSignsDemo />
 
+<div style={{marginBottom: "40px"}} />
+
 Feedback Sign is a compact visual element that communicates the result of a process or the state of a system. It is composed of an **illustrative icon** and, optionally, a **label** below it. It has 3 variants:
 
 - **Success** — process completed successfully (green)

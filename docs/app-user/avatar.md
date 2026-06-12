@@ -9,6 +9,8 @@ import { AvatarDemo } from '@site/src/components/HomepageFeatures/DS/Avatar';
 
 <AvatarDemo />
 
+<div style={{marginBottom: "40px"}} />
+
 Avatar is the visual representation of a user or entity in the interface. In BUSUP it has two variants:
 
 - **Default** — compact avatar, used inline in the UI (lists, headers, profile)

@@ -9,9 +9,13 @@ import { ToastDemo } from '@site/src/components/HomepageFeatures/DS/Toast';
 
 <ToastDemo />
 
+<div style={{marginBottom: "40px"}} />
+
 ---
 
-Toast is a notification that appears in the interface to communicate the current state of a service or the result of an action. Unlike the generic market standard, in BUSUP Toast is **mostly persistent** — it remains visible while that state is active, and disappears only when the service status changes.
+Toast is a notification that appears in the interface to communicate the current state of a service or the result of an action. In App User (mobile), Toast is primarily used to reflect **real-world service states** — a route in progress, a connection issue, a delay detected. These states are ongoing, so the toast is **mostly persistent**: it remains visible while the state is active and disappears only when the status changes.
+
+> **Dashboard vs App User** — On the Dashboard, Toast is used for **action feedback** (save confirmed, import complete, edit mode active). That context is action-driven, so dismiss behaviour may vary. Here in App User, the driver is always the service state, not a button press.
 
 BUSUP has 4 variants:
 - **Activated** — active service or action (green)
@@ -77,5 +81,5 @@ BUSUP has 4 variants:
 - **Toast = service state, not a button response.** In most BUSUP cases, Toast communicates something happening in the real world (route running, delay detected), not just a confirmation that a button worked.
 - **Semantic consistency.** Use the same variant for the same type of state across all products. If "route in progress" is Activated in App User, it should be Activated in App Driver too.
 - **State transitions.** When the status changes, the Toast should be replaced, not stacked.
-- **Point-in-time action Toasts** (e.g. "Settings saved") may use auto-dismiss — but that is the exception, not the rule.
+- **Auto-dismiss is the exception here.** App User toasts reflect service states, not point-in-time actions. If a toast needs to auto-dismiss, question whether it should be a toast at all — or whether it belongs in the Dashboard context instead.
 - **Positioning.** In App User (mobile): top of the screen, below the status bar. Never block interactive elements.

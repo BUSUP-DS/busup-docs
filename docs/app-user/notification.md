@@ -9,6 +9,8 @@ import { NotificationDemo } from '@site/src/components/HomepageFeatures/DS/Notif
 
 <NotificationDemo />
 
+<div style={{marginBottom: "40px"}} />
+
 Notification is a card that displays a system message or relevant communication to the user. It appears within a dedicated screen or list — it is not an overlay and does not interrupt the flow.
 
 In BUSUP it has 1 documented variant: **Default**.

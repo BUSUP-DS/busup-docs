@@ -9,6 +9,8 @@ import { BadgeDemo } from '@site/src/components/HomepageFeatures/DS/Badge';
 
 <BadgeDemo />
 
+<div style={{marginBottom: "40px"}} />
+
 Badge is a small visual indicator applied over an icon or UI element to signal **quantity** or **the presence of something new**. In BUSUP it has two variants:
 
 - **With number** — displays a count (e.g. 3 unread notifications)

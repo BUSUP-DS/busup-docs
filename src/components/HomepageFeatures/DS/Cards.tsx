@@ -189,28 +189,19 @@ export const RoutesCard = ({
 // ─── Demo ─────────────────────────────────────────────────────────────────────
 export const CardsDemo = () => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-    {/* Bookings cards */}
+    {/* Example 1 — Bookings Card */}
     <div>
       <p style={{ fontSize: '11px', color: '#989898', margin: '0 0 12px' }}>Bookings Card</p>
-      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-        <BookingsCard
-          headline="ONGOING"
-          dateRange="18/01/2022 – 19/07/2022"
-          routeDirection="Outbound route"
-          routeName="AICA1 (LEROY MERLIN): CIRCULAR PARQUE EMPRESARIAL ARROYO DE LA VEGA..."
-          bookingType="Flexible"
-        />
-        <BookingsCard
-          headline="ONGOING"
-          dateRange="18/01/2022 – 19/07/2022"
-          routeDirection="Outbound route"
-          routeName="AICA1 (LEROY MERLIN): CIRCULAR PARQUE EMPRESARIAL ARROYO DE LA VEGA..."
-          bookingType="Monthly"
-        />
-      </div>
+      <BookingsCard
+        headline="ONGOING"
+        dateRange="18/01/2022 – 19/07/2022"
+        routeDirection="Outbound route"
+        routeName="AICA1 (LEROY MERLIN): CIRCULAR PARQUE EMPRESARIAL ARROYO DE LA VEGA..."
+        bookingType="Flexible"
+      />
     </div>
 
-    {/* Routes card */}
+    {/* Example 3 — Routes Card */}
     <div>
       <p style={{ fontSize: '11px', color: '#989898', margin: '0 0 12px' }}>Routes Card</p>
       <RoutesCard

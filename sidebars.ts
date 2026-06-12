@@ -104,9 +104,15 @@ const sidebars: SidebarsConfig = {
           label: 'Components',
           collapsed: false,
           items: [
+            { type: 'doc', id: 'dashboard/side-menu', label: 'Side Menu' },
+            { type: 'doc', id: 'dashboard/toast', label: 'Toast' },
             { type: 'doc', id: 'dashboard/data-table', label: 'Data Table' },
             { type: 'doc', id: 'dashboard/filters', label: 'Filters' },
             { type: 'doc', id: 'dashboard/modal', label: 'Modal' },
+            { type: 'doc', id: 'dashboard/alert-system', label: 'Alert System' },
+            { type: 'doc', id: 'dashboard/accordion', label: 'Accordion' },
+            { type: 'doc', id: 'dashboard/service-detail-modal', label: 'Service Detail Modal' },
+            { type: 'doc', id: 'landings/title', label: 'Title' },
           ],
         },
       ],
@@ -116,9 +122,42 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '🚌 App Driver',
-      collapsed: true,
+      collapsed: false,
       items: [
         { type: 'doc', id: 'app-driver/index', label: 'Overview' },
+        {
+          type: 'category',
+          label: 'Components',
+          collapsed: false,
+          items: [
+            { type: 'doc', id: 'app-driver/welcome-header', label: 'Welcome Header' },
+            { type: 'doc', id: 'app-driver/route-components', label: 'Route Components' },
+            { type: 'doc', id: 'app-driver/incidence-modals', label: 'Incidence Modals' },
+            { type: 'doc', id: 'app-driver/passenger-information', label: 'Passenger Information' },
+            { type: 'doc', id: 'app-driver/manual-boarding-control', label: 'Manual Boarding Control' },
+            { type: 'doc', id: 'app-driver/on-demand-control', label: 'On Demand Control' },
+          ],
+        },
+      ],
+    },
+    // ─── Landings ─────────────────────────────────────────────────────────────
+    {
+      type: 'category',
+      label: '🌐 Landings',
+      collapsed: false,
+      items: [
+        { type: 'doc', id: 'landings/index', label: 'Overview' },
+        {
+          type: 'category',
+          label: 'Components',
+          collapsed: false,
+          items: [
+            { type: 'doc', id: 'landings/navigation-header', label: 'Navigation Header' },
+            { type: 'doc', id: 'landings/search-bar', label: 'Search Bar' },
+            { type: 'doc', id: 'landings/title', label: 'Title' },
+            { type: 'doc', id: 'landings/calendar-modal', label: 'Calendar Modal' },
+          ],
+        },
       ],
     },
   ],
