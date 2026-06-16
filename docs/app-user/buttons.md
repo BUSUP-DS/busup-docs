@@ -3,6 +3,8 @@ sidebar_label: Buttons
 sidebar_position: 3
 ---
 
+import { SquareButtonDemo, LinkButtonDemo, IconButtonDemo } from '@site/src/components/HomepageFeatures/DS/ButtonVariants';
+
 # Buttons
 
 Buttons allow users to take actions and make choices. In the BUSUP ecosystem, we follow a strict hierarchy to ensure clarity.
@@ -185,6 +187,66 @@ Our three main types of action.
   </div>
 
 </div>
+
+---
+
+## Square Button
+
+Used in quick-action grids — typically a shortcut card on the home screen or contextual panels. Combines a tinted icon container with a short label.
+
+<SquareButtonDemo />
+
+| Property | Value |
+|:---|:---|
+| Size | 110 × 109px |
+| Border radius | 16px |
+| Background | White `#ffffff` |
+| Shadow | `0px 4px 12px rgba(0,0,0,0.16)` (shadow-deep) |
+| Icon container | 40 × 40px · Border radius 30px · `rgba(0,191,111,0.2)` |
+| Icon size | 24 × 24px · Color `#00bf6f` |
+| Label | 12px Bold · `#414141` · centered |
+| Disabled | 40% opacity |
+
+---
+
+## Links
+
+Inline text actions — no container, no shadow. Used for secondary or contextual navigation within content flows (e.g., "See details", "Forgot password").
+
+<LinkButtonDemo />
+
+| Property | Value |
+|:---|:---|
+| Font | 10px Regular `#00bf6f` |
+| Padding | 8px vertical, 0 horizontal |
+| Variant: Normal | No decoration |
+| Variant: Underline | `text-decoration: underline` |
+| Icon slots | Optional 12px icon left / right |
+| Disabled | 30% opacity |
+
+> **When to use:** For low-priority or inline actions where a full button would feel heavy. Always accompany an icon when the action is ambiguous.
+
+---
+
+## Icon Button
+
+A compact circular button for icon-only actions. Two visual variants — `icon` (white card) and `icon-light` (no background, shadow only) — to work on both light and layered surfaces.
+
+<IconButtonDemo />
+
+| Property | `icon` | `icon-light` |
+|:---|:---|:---|
+| Size | 36 × 36px | 36 × 36px |
+| Border radius | 20px | 20px |
+| Background | White `#ffffff` | Transparent |
+| Shadow (default) | shadow-deep | shadow-deep |
+| Shadow (disabled) | shadow-soft | shadow-deep |
+| Icon size | 14 × 14px | 14 × 14px |
+| Disabled | 30% opacity | 30% opacity |
+
+> **Accessibility:** always provide a descriptive `aria-label` since there is no visible text label.
+
+---
 
 ## Best Practices
 
