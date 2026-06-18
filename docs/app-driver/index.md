@@ -15,6 +15,7 @@ These components exist only in App Driver and are documented in this section.
 
 | Component | Description |
 |:---|:---|
+| [Square Button](/busup-docs/docs/app-driver/buttons) | Quick-action card with icon + label, used in the driver home screen grid |
 | [Welcome Header](/busup-docs/docs/app-driver/welcome-header) | Greeting shown on the home screen when the driver opens the app |
 | [Route Components](/busup-docs/docs/app-driver/route-components) | Stop-by-stop route path and stop detail card |
 | [Incidence Modals](/busup-docs/docs/app-driver/incidence-modals) | Modals for reporting comments, incident types, and emergencies |
@@ -30,7 +31,8 @@ The following components are used across App Driver but are **documented once** 
 
 | Component | Documented in |
 |:---|:---|
-| Buttons | [App User → Buttons](/busup-docs/docs/app-user/buttons) |
+| Primary / Secondary / Tertiary Buttons | [App User → Buttons](/busup-docs/docs/app-user/buttons) |
+| Links / Icon Button | [App User → Buttons](/busup-docs/docs/app-user/buttons) |
 | Badge | [App User → Badge](/busup-docs/docs/app-user/badge) |
 | Avatar | [App User → Avatar](/busup-docs/docs/app-user/avatar) |
 | Toast | [App User → Toast](/busup-docs/docs/app-user/toast) |

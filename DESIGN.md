@@ -1,3 +1,235 @@
+---
+version: alpha
+name: BUSUP Design System
+description: Reference for engineers building BUSUP products. All values sourced from the Figma NEW-LIBRARY.
+
+colors:
+  # Primary
+  primary-100: "#d7ffed"
+  primary-200: "#b2ffdd"
+  primary-300: "#00bf6f"
+  primary-400: "#049157"
+  primary-500: "#0a5d3d"
+  on-primary: "#ffffff"
+  # Secondary
+  secondary-100: "#fde6e3"
+  secondary-200: "#f9b3a8"
+  secondary-300: "#ea6753"
+  secondary-400: "#b33522"
+  secondary-500: "#7c2c20"
+  # Neutral
+  neutral-0: "#ffffff"
+  neutral-50: "#f4f4f4"
+  neutral-100: "#dbdbdb"
+  neutral-200: "#c4c4c4"
+  neutral-300: "#989898"
+  neutral-400: "#414141"
+  neutral-500: "#212121"
+  neutral-1000: "#000000"
+  # Feedback
+  info: "#29b6f6"
+  alert: "#ffa000"
+  danger: "#e53935"
+  success: "#66bb6a"
+  # Surface
+  surface-warm: "#fbfaf7"
+  surface-cool: "#edf0f4"
+  # UI
+  side-menu: "#242D31"
+  side-menu-active: "#2F3B40"
+
+typography:
+  display:
+    fontFamily: "Busup Sans"
+    fontSize: 50px
+    fontWeight: "400"
+    lineHeight: 1.2
+  header:
+    fontFamily: "Busup Sans"
+    fontSize: 42px
+    fontWeight: "400"
+    lineHeight: 1.2
+  headline:
+    fontFamily: "Busup Sans"
+    fontSize: 35px
+    fontWeight: "400"
+    lineHeight: 1.2
+  subheader:
+    fontFamily: "Busup Sans"
+    fontSize: 29px
+    fontWeight: "400"
+    lineHeight: 1.2
+  subheadline:
+    fontFamily: "Busup Sans"
+    fontSize: 24px
+    fontWeight: "400"
+    lineHeight: 1.2
+  body-xl:
+    fontFamily: "Busup Sans"
+    fontSize: 20px
+    fontWeight: "400"
+    lineHeight: 1.5
+  body-lg:
+    fontFamily: "Busup Sans"
+    fontSize: 16px
+    fontWeight: "400"
+    lineHeight: 1.5
+  body-md:
+    fontFamily: "Busup Sans"
+    fontSize: 14px
+    fontWeight: "400"
+    lineHeight: 1.5
+  body-sm:
+    fontFamily: "Busup Sans"
+    fontSize: 12px
+    fontWeight: "400"
+    lineHeight: 1.5
+  body-xs:
+    fontFamily: "Busup Sans"
+    fontSize: 10px
+    fontWeight: "400"
+    lineHeight: 1.5
+  label-desktop:
+    fontFamily: "Busup Sans"
+    fontSize: 14px
+    fontWeight: "700"
+  label-mobile:
+    fontFamily: "Busup Sans"
+    fontSize: 10px
+    fontWeight: "700"
+
+rounded:
+  sm: 4px
+  md: 8px
+  lg: 20px
+  full: 50%
+
+spacing:
+  base: 4px
+  2xs: 2px
+  xs: 4px
+  sm: 8px
+  md: 12px
+  lg: 16px
+  xl: 20px
+  2xl: 24px
+  3xl: 28px
+
+components:
+  # Buttons (global)
+  button-primary:
+    backgroundColor: "{colors.primary-300}"
+    textColor: "{colors.on-primary}"
+    typography: "{typography.label-desktop}"
+    rounded: "{rounded.lg}"
+    height: 31px
+    padding: "8px 24px"
+  button-primary-mobile:
+    typography: "{typography.label-mobile}"
+  button-secondary:
+    backgroundColor: "{colors.neutral-0}"
+    textColor: "{colors.primary-300}"
+    typography: "{typography.label-desktop}"
+    rounded: "{rounded.lg}"
+    height: 31px
+    padding: "8px 24px"
+  button-tertiary:
+    backgroundColor: "{colors.neutral-0}"
+    textColor: "{colors.primary-300}"
+    typography: "{typography.label-desktop}"
+    rounded: "{rounded.lg}"
+    height: 31px
+    padding: "8px 24px"
+  button-disabled:
+    backgroundColor: "{colors.neutral-200}"
+    textColor: "{colors.on-primary}"
+    rounded: "{rounded.lg}"
+    height: 31px
+  # Dashboard layout
+  dashboard-side-menu:
+    backgroundColor: "{colors.side-menu}"
+    textColor: "{colors.on-primary}"
+    width: 248px
+  dashboard-header:
+    backgroundColor: "{colors.primary-300}"
+    height: 67px
+  dashboard-content-slot:
+    backgroundColor: "{colors.neutral-0}"
+    rounded: "{rounded.md}"
+    padding: 32px
+  # Badges
+  badge-success:
+    backgroundColor: "#e3f5e3"
+    textColor: "#358439"
+    rounded: "{rounded.sm}"
+  badge-warning:
+    backgroundColor: "#fff4c5"
+    textColor: "#bb5202"
+    rounded: "{rounded.sm}"
+  badge-danger:
+    backgroundColor: "#ffe2e1"
+    textColor: "#9d1a17"
+    rounded: "{rounded.sm}"
+  badge-info:
+    backgroundColor: "#e0f2fe"
+    textColor: "#085884"
+    rounded: "{rounded.sm}"
+  badge-neutral:
+    backgroundColor: "{colors.neutral-50}"
+    textColor: "{colors.neutral-400}"
+    rounded: "{rounded.sm}"
+  # Avatar
+  avatar-sm:
+    size: 32px
+    rounded: "{rounded.full}"
+  avatar-md:
+    size: 40px
+    rounded: "{rounded.full}"
+  avatar-lg:
+    size: 56px
+    rounded: "{rounded.full}"
+  # Form controls
+  input-default:
+    backgroundColor: "{colors.neutral-0}"
+    textColor: "{colors.neutral-400}"
+    typography: "{typography.body-md}"
+    rounded: "{rounded.md}"
+    width: 311px
+    padding: "12px 16px"
+  checkbox:
+    backgroundColor: "{colors.primary-300}"
+    rounded: "{rounded.sm}"
+    size: 24px
+  toggle-on:
+    backgroundColor: "{colors.primary-300}"
+  toggle-off:
+    backgroundColor: "{colors.neutral-100}"
+  # Tabs
+  tab-container:
+    backgroundColor: "{colors.neutral-50}"
+    rounded: "{rounded.md}"
+    height: 34px
+  # Modal
+  modal-dashboard:
+    backgroundColor: "{colors.neutral-0}"
+    rounded: "{rounded.md}"
+    width: 745px
+    padding: "32px 24px"
+  # Toast
+  toast-success:
+    backgroundColor: "rgba(102,187,106,0.2)"
+    rounded: "{rounded.sm}"
+  toast-alert:
+    backgroundColor: "rgba(255,160,0,0.2)"
+    rounded: "{rounded.sm}"
+  toast-error:
+    backgroundColor: "rgba(229,57,53,0.2)"
+    rounded: "{rounded.sm}"
+  toast-info:
+    backgroundColor: "rgba(41,182,246,0.2)"
+    rounded: "{rounded.sm}"
+---
+
 # BUSUP Design System — DESIGN.md
 
 Reference for engineers building BUSUP products. All values come directly from the Figma library (NEW-LIBRARY).  
@@ -15,10 +247,10 @@ Full interactive documentation: https://busup-ds.github.io/busup-docs
 6. [Border Radius](#border-radius)
 7. [Buttons](#buttons)
 8. [Layout — Dashboard](#layout--dashboard)
-9. [Components — Dashboard](#components--dashboard)
-10. [Components — App User](#components--app-user)
-11. [Components — App Driver](#components--app-driver)
-12. [Components — Landings](#components--landings)
+9. [Components — Dashboard](#components--dashboard) — Side Menu · Header · Toast · Modal · Accordion · Data Table · Alert Row · Filters · Service Detail Modal
+10. [Components — App User](#components--app-user) — Toast · Navigation Bar · Side Menu · Tabs · Feedback Signs · Feedback Modals · Notification · Text Input · Form Controls · Code Input · Segmented Control · Progress Bar · Badge · Avatar · Cards · Ticket
+11. [Components — App Driver](#components--app-driver) — Welcome Header · Route Components · Incidence Modals · Passenger Information · Manual Boarding Control · On Demand Control
+12. [Components — Landings](#components--landings) — Navigation Header · Search Bar · Title · Calendar Modal
 
 ---
 
@@ -152,7 +384,7 @@ One unified scale across all platforms. What varies is *which token* is used per
 | Section heading | `20px` | Bold |
 | Card title | `16px` | Bold |
 | Body text, description | `14px` | Regular |
-| Button label | `14px` | Bold |
+| Button label | `10px` | Bold |
 | Caption, helper text, label | `12px` | Regular |
 | Badge, notification count | `10px` | Bold |
 
@@ -210,7 +442,8 @@ Global component — applies to Dashboard, App User, App Driver, and Landings.
 | Height | `31px` |
 | Padding | `8px 24px` |
 | Border radius | `20px` |
-| Font | `10px Bold Busup Sans` |
+| Font — mobile (App User · App Driver) | `10px Bold Busup Sans` |
+| Font — desktop (Dashboard · Landings) | `14px Bold Busup Sans` |
 | Shadow (Primary + Tertiary) | `shadow-deep` |
 
 | Variant | Background | Text | Border |
@@ -401,6 +634,33 @@ Confirm: `#00bf6f bg · 14px Bold white` · disabled → `#c4c4c4`
 
 ---
 
+### Filters
+
+Primary mechanism for selecting the context of a page or changing the data shown. Always requires explicit Apply — never applied immediately.
+
+#### Anatomy
+
+| Element | Description |
+|:---|:---|
+| **Header** | Collapsible panel trigger — "Filters" label in `#00BF6F`, green bottom border, chevron |
+| **Dropdown single select** | Selects one value; list closes after selection |
+| **Dropdown multi select** | Selects one or more values; uses checkboxes; list stays open until closed |
+| **Text input** | Optional free-text field for name/keyword search |
+| **Mandatory indicator** | Red asterisk `*` — Apply disabled until all mandatory fields filled |
+| **Clear all** | Resets all fields without applying; secondary button |
+| **Apply** | Submits selection and loads filtered content; primary button; disabled until mandatory fields filled |
+
+#### Behaviour
+
+- Filters are **never applied immediately** — user must press Apply
+- Apply button disabled while any mandatory field (`*`) is empty
+- Clear all resets fields without changing the current view
+- Panel starts **open by default** on pages where filter selection is required to load content
+- Grey background on dropdown option = hover/focus only, not selected state
+- Both Clear all and Apply buttons always centred at the bottom of the panel
+
+---
+
 ### Service Detail Modal
 
 | Property | Value |
@@ -475,6 +735,282 @@ Semantic colour-coded labels for status communication.
 Border radius: `50%`. Fallback: initials on `#d7ffed` background with `#00BF6F` text.
 
 ---
+
+### Tabs
+
+Two variants for switching between exactly two related views or content sections.
+
+| Variant | When to use |
+|:---|:---|
+| **iOS** | Inside cards, modal sheets, embedded content panels |
+| **Android** | Full-width page-level navigation at the top of a screen |
+
+| Property | Token | Value |
+|:---|:---|:---|
+| Height | `--tab-height` | `34px` |
+| Padding | `--tab-padding-v` / `--tab-padding-h` | `8px / 16px` |
+| Border radius | `--tab-border-radius` | `8px` |
+| Container background | `--tab-container-bg` | `#f4f4f4` — Neutral 50 |
+| Active background (iOS) | `--tab-active-bg` | `#ffffff` |
+| Active border (iOS) | `--tab-active-border` | `#414141` — Neutral 400 |
+| Active shadow (iOS) | `--tab-active-shadow` | `0 4px 12px 0 rgba(0,0,0,0.16)` |
+| Active indicator (Android) | `--tab-android-active` | `#ea6753` — Secondary 300 |
+| Inactive color | `--tab-inactive-color` | `#000000` |
+| Font size | — | `14px` |
+| Font weight active | — | `700 (Bold)` |
+| Font weight inactive | — | `400 (Regular)` |
+
+**Rules:** always exactly two tabs; short parallel labels ("Active / Future", "Upcoming / Past"); one tab always selected — never unselected state.
+
+---
+
+### Feedback Signs
+
+Compact visual element combining an illustrative icon + optional label. Non-blocking — appears inline, never as an overlay.
+
+| Variant | Icon colour | Use when… |
+|:---|:---|:---|
+| **Success** | `#66bb6a` (Success_300) | Process completed successfully |
+| **Alert** | `#ffa000` (Alert_300) | Attention required, intermediate state |
+| **Error** | `#e53935` (Danger_300) | Process failed, user sees the result |
+
+**Common contexts:** data tables, ticket validation lists, connection status indicators, inside Text Inputs (icon-only).  
+Icon-only version (no label) is valid when context is sufficient.
+
+---
+
+### Feedback Modals
+
+Overlay cards that communicate an action outcome. Interrupt the flow — the user must acknowledge before continuing.
+
+#### Styles
+
+| Style | Structure | Use when… |
+|:---|:---|:---|
+| **Simple** | Icon + title + 1 button | Outcome is clear, one path forward |
+| **Full** | Icon + title + description + 2 buttons | User needs context; action is reversible/destructive |
+
+#### Types
+
+| Type | Colour | Token |
+|:---|:---|:---|
+| Success | `#00bf6f` | Primary 300 |
+| Alert | `#ffa000` | Alert 300 |
+| Error | `#e53935` | Danger 300 |
+
+#### Tokens
+
+| Property | Value |
+|:---|:---|
+| Width | `325px` |
+| Border radius | `16px` |
+| Shadow | `0px 2px 4px rgba(0,0,0,0.16)` |
+| Icon size | `64×64px` |
+| Icon padding top | `32px` |
+| Icon padding bottom | `16px` |
+| Title | `14px Bold #212121` |
+| Description | `14px Light #414141` |
+| Content padding horizontal | `32px` |
+| Button border radius | `20px` |
+| Button padding | `8px 24px` |
+| Button font | `10px Bold` |
+| Button shadow | `0px 4px 6px rgba(0,0,0,0.16)` |
+
+---
+
+### Notification
+
+Card for system messages or communications. Appears in a dedicated screen or list — not an overlay, does not interrupt the flow.
+
+| Property | Value |
+|:---|:---|
+| Variant | Default (1 documented) |
+| Display order | Reverse chronological — most recent first |
+| Unread state | Visually distinct from read |
+| Action | Mark as read individually or all at once |
+
+**Badge count** on the Navigation Bar will reflect unread count — not yet implemented.
+
+---
+
+### Text Input
+
+| Property | Token | Value |
+|:---|:---|:---|
+| Width | `--input-width` | `311px` |
+| Padding | `--input-padding-v` / `--input-padding-h` | `12px / 16px` |
+| Border radius | `--input-border-radius` | `8px` |
+| Border Default | `--input-border-default` | `#c4c4c4` — Neutral 200 |
+| Border Active | `--input-border-active` | `#989898` — Neutral 300 |
+| Border Error | `--input-border-error` | `#e53935` — Danger 300 |
+| Background Disabled | `--input-bg-disabled` | `#dbdbdb` — Neutral 100 |
+| Label | `--input-label-font-size` | `14px #414141` |
+| Placeholder Default | — | `#dbdbdb` — Neutral 100 |
+| Placeholder Active | — | `#414141` — Neutral 400 |
+| Hint | `--input-hint-font-size` | `10px #414141` |
+| Hint Error | — | `#e53935` |
+| Required asterisk | — | `#e53935` |
+| Slot size | `--input-slot-size` | `16×16px` |
+
+**States:** Default · Active (focus) · Error · Disabled.  
+**Slots:** left (context: icon, flag, chip) + right (action: chevron, clear). Both independent and optional.  
+**Compositions in use:** Phone Number Input (country flag left slot), File Upload (chip left slot).
+
+#### Dropdown (extends Text Input)
+
+| Property | Token | Value |
+|:---|:---|:---|
+| Width | `--dropdown-width` | `311px` |
+| Item height | `--dropdown-item-height` | `34px` |
+| Border radius | `--dropdown-border-radius` | `8px` |
+| Padding | `--dropdown-padding-v` / `--dropdown-padding-h` | `8px / 12px` |
+| Font | `--dropdown-font-size` / `--dropdown-font-weight` | `12px / 300 Light` |
+| Selected background | `--dropdown-selected-bg` | `#f4f4f4` — Neutral 50 |
+| List shadow | `--dropdown-shadow` | `0 4px 12px 0 rgba(0,0,0,0.16)` |
+
+Variants: single-select · single-select with system default · multi-select (checkboxes in list items) · disabled.
+
+---
+
+### Form Controls
+
+#### Checkbox
+
+Use when the user can select zero or more options independently.
+
+| Property | Token | Value |
+|:---|:---|:---|
+| Size | `--checkbox-size` | `24×24px` |
+| Border radius | `--checkbox-border-radius` | `4px` |
+| Border unchecked | `--checkbox-unchecked-border` | `#989898` — Neutral 300 · `1.5px` |
+| Background checked | `--checkbox-checked-bg` | `#00bf6f` — Primary 300 |
+| Checkmark color | `--checkbox-checkmark-color` | `#ffffff` |
+| Label | `--control-label-font-size` | `12px #414141` |
+| Gap control → label | `--control-gap` | `8px` |
+
+#### Radiobutton
+
+Use when exactly one option must be selected from a group (2–6 options max).
+
+| Property | Token | Value |
+|:---|:---|:---|
+| Size | `--radio-size` | `20×20px` |
+| Dot size | `--radio-dot-size` | `8×8px` |
+| Border unmarked | `--radio-unmarked-border` | `#989898` — Neutral 300 · `1.5px` |
+| Background marked | `--radio-marked-bg` | `#00bf6f` — Primary 300 |
+| Dot color | `--radio-marked-dot-color` | `#ffffff` |
+| Label | `--control-label-font-size` | `12px #414141` |
+| Gap control → label | `--control-gap` | `8px` |
+
+#### Toggle
+
+Use for binary on/off settings that take effect immediately — no submit needed.
+
+| Property | Token | Value |
+|:---|:---|:---|
+| Track width | `--toggle-track-width` | `40px` |
+| Track height | `--toggle-track-height` | `20px` |
+| Track radius | `--toggle-track-radius` | `10px` |
+| Thumb size | `--toggle-thumb-size` | `14×14px` |
+| Thumb color | `--toggle-thumb-color` | `#ffffff` |
+| Thumb offset | `--toggle-thumb-offset` | `3px` |
+| Off background | `--toggle-off-bg` | `#dbdbdb` — Neutral 100 |
+| On background | `--toggle-on-bg` | `#00bf6f` — Primary 300 |
+| Thumb shadow | — | `0 2px 8px 0 rgba(0,0,0,0.08)` |
+
+**Label rule:** always describe the active (on) state — "Show booking section", not "Booking section".  
+**Do not** use inside forms that require a Save/Confirm step — use Checkbox instead.
+
+---
+
+### Code Input
+
+Segmented numeric entry field for verification codes and PINs. Each digit occupies an independent box.
+
+Supports **1–6 digits**. Three states per box: Default · Active · Error.
+
+| Property | Value |
+|:---|:---|
+| Digits | 1–6 |
+| Validation | On complete code only — never field by field during typing |
+| Error | All boxes simultaneously; clear all + return focus to first |
+| Paste | Auto-fill all boxes from clipboard |
+| Keyboard | Numeric keyboard on mobile |
+
+---
+
+### Segmented Control
+
+Selector for mutually exclusive options in a row. One option always active.
+
+| Variant | Description |
+|:---|:---|
+| **Selected** | Active option with visual highlight |
+| **Default** | Inactive option |
+
+**Rules:**
+- All segments same width — never adjust individually by label length
+- Always one option selected — no empty state
+- Use for 2–4 view modes (Map/List, Week/Month); more options only valid for very short labels (times, numbers)
+- Position close to the content it controls
+
+**vs Tabs:** Segmented Control filters/toggles view mode within a screen; Tabs always switches between exactly two content sections.
+
+---
+
+### Progress Bar
+
+Linear progress indicator. 5 defined fill states: 100% · 75% · 50% · 25% · 0%.
+
+**Note:** defined in Figma library but not yet applied in App User. Reference for future implementation and Dashboard use.
+
+| Use when… | Avoid when… |
+|:---|:---|
+| Process has a measurable quantity (vehicle capacity, route progress) | Process has indeterminate duration — use a loading indicator |
+| User benefits from knowing how much is left | Exact value already shown by another element |
+
+**Primary use case:** vehicle capacity — shows available seats before boarding.
+
+---
+
+### Cards
+
+Container grouping related information about an entity. Two variants in App User:
+
+| Variant | Use |
+|:---|:---|
+| **Bookings Card** | User's active, upcoming, or past bookings |
+| **Routes Card** | Available or in-progress routes |
+
+Internal subcomponents: Headline (most important info) · Subhead + Body (secondary) · Divider.
+
+**Rules:**
+- Entire card is tappable when it leads to a detail screen
+- Max ~4 visible attributes — more → use a detail screen
+- Do not mix Bookings Cards and Routes Cards in the same scroll list
+
+---
+
+### Ticket
+
+The user's boarding pass. Content and structure vary by connectivity, booking availability, and operator configuration.
+
+#### Scenarios
+
+| Scenario | Internet | Booking | QR enabled | What it shows |
+|:---|:---|:---|:---|:---|
+| **1.1** | ❌ | Unknown | — | QR Code + connection error message |
+| **2.1** | ✅ | ❌ | ✅ | QR Code + "No bookings for today" |
+| **2.2** | ✅ | ❌ | ❌ | "No bookings for today" + booking CTA |
+| **3.1** | ✅ | ✅ | ✅ | Full ticket — On demand / Expedition crosseling |
+| **3.2** | ✅ | ✅ | ✅ | Full ticket — Standard / Shuttle / Circular |
+
+**Critical rules:**
+- QR Code must always be available when technically possible — never block boarding due to lack of internet
+- Ticket state must be immediately readable: valid, no booking, connection error
+- Reachable in the fewest taps from the main screen
+- Support screen rotation for QR reading
+- No destructive actions (cancel booking) inside the Ticket screen
 
 ---
 
@@ -681,7 +1217,7 @@ Date picker that opens from the Search Bar Date field.
 | Outside-month days | `12px Light #dbdbdb` — not interactive |
 | Selected circle | `24px diameter · #00bf6f` |
 | Selected text | `12px Bold white` |
-| Apply button | `#00bf6f · 10px Bold white · border-radius 20px · shadow-deep` |
+| Apply button | `#00bf6f · 14px Bold white · border-radius 20px · shadow-deep` |
 
 ---
 

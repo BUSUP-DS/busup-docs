@@ -72,7 +72,7 @@ export const SquareButton = ({
 );
 
 export const SquareButtonDemo = () => (
-  <div style={{ fontFamily: '"Busup Sans", sans-serif', display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'flex-start' }}>
+  <div style={{ fontFamily: '"Busup Sans", sans-serif', display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'flex-start', marginBottom: 32 }}>
     <div>
       <p style={{ fontSize: 12, color: '#989898', margin: '0 0 8px' }}>Default</p>
       <SquareButton label="Add stop" />
@@ -80,10 +80,6 @@ export const SquareButtonDemo = () => (
     <div>
       <p style={{ fontSize: 12, color: '#989898', margin: '0 0 8px' }}>Disabled</p>
       <SquareButton label="Add stop" disabled />
-    </div>
-    <div>
-      <p style={{ fontSize: 12, color: '#989898', margin: '0 0 8px' }}>Custom label</p>
-      <SquareButton label="New booking" />
     </div>
   </div>
 );
@@ -94,6 +90,7 @@ export const SquareButtonDemo = () => (
 // No container, no shadow — just text in Primary_300 (#00bf6f)
 // Font: 10px Regular Busup Sans
 // Disabled: 30% opacity
+// Optional left/right icon slots (any 12px icon)
 
 type LinkVariant = 'normal' | 'underline';
 type LinkType = 'link' | 'disabled';
@@ -102,15 +99,15 @@ type LinkButtonProps = {
   text?: string;
   variant?: LinkVariant;
   type?: LinkType;
-  leftIcon?: boolean;
-  rightIcon?: boolean;
+  leftIcon?: React.ReactNode;
+  rightIcon?: React.ReactNode;
   onClick?: () => void;
 };
 
-const PlusIcon = ({ color = '#00bf6f' }: { color?: string }) => (
+// Generic chevron — represents an optional icon slot, not a specific icon
+const ChevronIcon = () => (
   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ flexShrink: 0 }}>
-    <rect x="5.5" y="1" width="1" height="10" rx="0.5" fill={color}/>
-    <rect x="1" y="5.5" width="10" height="1" rx="0.5" fill={color}/>
+    <path d="M4.5 2.5L7.5 6L4.5 9.5" stroke="#00bf6f" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
@@ -118,8 +115,8 @@ export const LinkButton = ({
   text = 'Button link',
   variant = 'normal',
   type = 'link',
-  leftIcon = false,
-  rightIcon = false,
+  leftIcon,
+  rightIcon,
   onClick,
 }: LinkButtonProps) => (
   <button
@@ -128,7 +125,7 @@ export const LinkButton = ({
     style={{
       display: 'inline-flex',
       alignItems: 'center',
-      gap: 8,
+      gap: 4,
       padding: '8px 0',
       background: 'none',
       border: 'none',
@@ -137,7 +134,7 @@ export const LinkButton = ({
       fontFamily: '"Busup Sans", sans-serif',
     }}
   >
-    {leftIcon && <PlusIcon />}
+    {leftIcon}
     <span style={{
       fontSize: 10,
       fontWeight: 400,
@@ -148,31 +145,55 @@ export const LinkButton = ({
     }}>
       {text}
     </span>
-    {rightIcon && <PlusIcon />}
+    {rightIcon}
   </button>
 );
 
+// Demo label style
+const demoLabel = (text: string) => (
+  <p style={{ fontSize: 11, color: '#989898', margin: '0 0 2px', fontFamily: '"Busup Sans", sans-serif' }}>{text}</p>
+);
+
 export const LinkButtonDemo = () => (
-  <div style={{ fontFamily: '"Busup Sans", sans-serif', display: 'flex', flexDirection: 'column', gap: 4 }}>
-    <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', alignItems: 'center' }}>
+  <div style={{ fontFamily: '"Busup Sans", sans-serif', marginBottom: 32 }}>
+    {/* Row 1 — Normal variants */}
+    <p style={{ fontSize: 11, fontWeight: 700, color: '#414141', margin: '0 0 4px', textTransform: 'uppercase', letterSpacing: 1 }}>Normal</p>
+    <div style={{ display: 'flex', gap: 32, flexWrap: 'wrap', alignItems: 'flex-start', marginBottom: 20 }}>
       <div>
-        <p style={{ fontSize: 11, color: '#989898', margin: '0 0 4px' }}>Normal</p>
+        {demoLabel('Default')}
         <LinkButton text="See more" variant="normal" />
       </div>
       <div>
-        <p style={{ fontSize: 11, color: '#989898', margin: '0 0 4px' }}>Underline</p>
+        {demoLabel('Left icon')}
+        <LinkButton text="See more" variant="normal" leftIcon={<ChevronIcon />} />
+      </div>
+      <div>
+        {demoLabel('Right icon')}
+        <LinkButton text="See more" variant="normal" rightIcon={<ChevronIcon />} />
+      </div>
+      <div>
+        {demoLabel('Disabled')}
+        <LinkButton text="See more" variant="normal" type="disabled" />
+      </div>
+    </div>
+
+    {/* Row 2 — Underline variants */}
+    <p style={{ fontSize: 11, fontWeight: 700, color: '#414141', margin: '0 0 4px', textTransform: 'uppercase', letterSpacing: 1 }}>Underline</p>
+    <div style={{ display: 'flex', gap: 32, flexWrap: 'wrap', alignItems: 'flex-start' }}>
+      <div>
+        {demoLabel('Default')}
         <LinkButton text="See more" variant="underline" />
       </div>
       <div>
-        <p style={{ fontSize: 11, color: '#989898', margin: '0 0 4px' }}>Normal + icons</p>
-        <LinkButton text="See more" variant="normal" leftIcon rightIcon />
+        {demoLabel('Left icon')}
+        <LinkButton text="See more" variant="underline" leftIcon={<ChevronIcon />} />
       </div>
       <div>
-        <p style={{ fontSize: 11, color: '#989898', margin: '0 0 4px' }}>Disabled</p>
-        <LinkButton text="See more" variant="normal" type="disabled" />
+        {demoLabel('Right icon')}
+        <LinkButton text="See more" variant="underline" rightIcon={<ChevronIcon />} />
       </div>
       <div>
-        <p style={{ fontSize: 11, color: '#989898', margin: '0 0 4px' }}>Underline disabled</p>
+        {demoLabel('Disabled')}
         <LinkButton text="See more" variant="underline" type="disabled" />
       </div>
     </div>
@@ -236,23 +257,40 @@ export const IconButton = ({
   </button>
 );
 
+const cellLabel = (text: string) => (
+  <p style={{ fontSize: 11, color: '#989898', margin: '0 0 8px', fontFamily: '"Busup Sans", sans-serif' }}>{text}</p>
+);
+
 export const IconButtonDemo = () => (
-  <div style={{ fontFamily: '"Busup Sans", sans-serif', display: 'flex', gap: 24, flexWrap: 'wrap', alignItems: 'flex-start' }}>
-    <div>
-      <p style={{ fontSize: 11, color: '#989898', margin: '0 0 8px' }}>Icon button — Default</p>
-      <IconButton variant="icon" />
+  <div style={{ fontFamily: '"Busup Sans", sans-serif', marginBottom: 32 }}>
+    {/* Column headers */}
+    <div style={{ display: 'grid', gridTemplateColumns: '120px 120px', gap: '0 16px', marginBottom: 4 }}>
+      <p style={{ fontSize: 11, fontWeight: 700, color: '#414141', margin: 0, textTransform: 'uppercase', letterSpacing: 1 }}>Icon button</p>
+      <p style={{ fontSize: 11, fontWeight: 700, color: '#414141', margin: 0, textTransform: 'uppercase', letterSpacing: 1 }}>Icon-light</p>
     </div>
-    <div>
-      <p style={{ fontSize: 11, color: '#989898', margin: '0 0 8px' }}>Icon button — Disabled</p>
-      <IconButton variant="icon" disabled />
+
+    {/* Default row */}
+    <div style={{ display: 'grid', gridTemplateColumns: '120px 120px', gap: '0 16px', marginBottom: 20 }}>
+      <div>
+        {cellLabel('Default')}
+        <IconButton variant="icon" />
+      </div>
+      <div>
+        {cellLabel('Default')}
+        <IconButton variant="icon-light" />
+      </div>
     </div>
-    <div style={{ padding: '0 8px 8px', background: '#f4f4f4', borderRadius: 8 }}>
-      <p style={{ fontSize: 11, color: '#989898', margin: '0 0 8px', paddingTop: 8 }}>Icon-light — Default</p>
-      <IconButton variant="icon-light" />
-    </div>
-    <div style={{ padding: '0 8px 8px', background: '#f4f4f4', borderRadius: 8 }}>
-      <p style={{ fontSize: 11, color: '#989898', margin: '0 0 8px', paddingTop: 8 }}>Icon-light — Disabled</p>
-      <IconButton variant="icon-light" disabled />
+
+    {/* Disabled row */}
+    <div style={{ display: 'grid', gridTemplateColumns: '120px 120px', gap: '0 16px' }}>
+      <div>
+        {cellLabel('Disabled')}
+        <IconButton variant="icon" disabled />
+      </div>
+      <div>
+        {cellLabel('Disabled')}
+        <IconButton variant="icon-light" disabled />
+      </div>
     </div>
   </div>
 );

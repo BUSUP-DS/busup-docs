@@ -3,7 +3,7 @@ sidebar_label: Buttons
 sidebar_position: 3
 ---
 
-import { SquareButtonDemo, LinkButtonDemo, IconButtonDemo } from '@site/src/components/HomepageFeatures/DS/ButtonVariants';
+import { LinkButtonDemo, IconButtonDemo } from '@site/src/components/HomepageFeatures/DS/ButtonVariants';
 
 # Buttons
 
@@ -190,25 +190,6 @@ Our three main types of action.
 
 ---
 
-## Square Button
-
-Used in quick-action grids — typically a shortcut card on the home screen or contextual panels. Combines a tinted icon container with a short label.
-
-<SquareButtonDemo />
-
-| Property | Value |
-|:---|:---|
-| Size | 110 × 109px |
-| Border radius | 16px |
-| Background | White `#ffffff` |
-| Shadow | `0px 4px 12px rgba(0,0,0,0.16)` (shadow-deep) |
-| Icon container | 40 × 40px · Border radius 30px · `rgba(0,191,111,0.2)` |
-| Icon size | 24 × 24px · Color `#00bf6f` |
-| Label | 12px Bold · `#414141` · centered |
-| Disabled | 40% opacity |
-
----
-
 ## Links
 
 Inline text actions — no container, no shadow. Used for secondary or contextual navigation within content flows (e.g., "See details", "Forgot password").
@@ -219,12 +200,12 @@ Inline text actions — no container, no shadow. Used for secondary or contextua
 |:---|:---|
 | Font | 10px Regular `#00bf6f` |
 | Padding | 8px vertical, 0 horizontal |
-| Variant: Normal | No decoration |
+| Variant: Normal | No text decoration |
 | Variant: Underline | `text-decoration: underline` |
-| Icon slots | Optional 12px icon left / right |
+| Icon slots | Optional — any 12px icon, left and/or right |
 | Disabled | 30% opacity |
 
-> **When to use:** For low-priority or inline actions where a full button would feel heavy. Always accompany an icon when the action is ambiguous.
+> **When to use:** For low-priority or inline actions where a full button would feel heavy. The icon slots are optional — use them only when they add clarity to the action.
 
 ---
 
