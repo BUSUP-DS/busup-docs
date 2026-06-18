@@ -35,7 +35,7 @@ The following components are used across App Driver but are **documented once** 
 | Links / Icon Button | [App User → Buttons](/busup-docs/docs/app-user/buttons) |
 | Badge | [App User → Badge](/busup-docs/docs/app-user/badge) |
 | Avatar | [App User → Avatar](/busup-docs/docs/app-user/avatar) |
-| Toast | [App User → Toast](/busup-docs/docs/app-user/toast) |
+| Toast (Connection bar variants) | [App Driver → Toast](/busup-docs/docs/app-driver/toast) |
 | Text Input | [App User → Text Input](/busup-docs/docs/app-user/inputs) |
 | Form Controls (Checkbox, Radio, Toggle) | [App User → Form Controls](/busup-docs/docs/app-user/form-controls) |
 | Segmented Control | [App User → Segmented Control](/busup-docs/docs/app-user/segmented-control) |

@@ -126,3 +126,112 @@ export const ToastDemo = () => {
     </div>
   );
 };
+
+// ─── Connection Bar (App Driver only) ────────────────────────────────────────
+// Figma nodes 93:8267 (connected) | 93:8371 (no connection)
+// Width: 390px | Height: 46px | Border-radius: 4px | Padding: 8px 12px | Gap: 12px
+// Connected:      bg rgba(41,182,246,0.2) | "Connected" 12px Bold #29B6F6
+// No connection:  bg rgba(196,196,196,0.3) | "No connection" 12px Bold #414141
+// Both: timestamp 10px Light #414141 + refresh icon button 30×30px
+
+const WifiIcon = () => (
+  <svg width="20" height="12" viewBox="0 0 20 12" fill="none" style={{ flexShrink: 0 }}>
+    <path d="M10 10.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z" fill="#29B6F6"/>
+    <path d="M6.8 8.2a4.5 4.5 0 0 1 6.4 0" stroke="#29B6F6" strokeWidth="1.4" strokeLinecap="round"/>
+    <path d="M3.5 4.9a9 9 0 0 1 13 0" stroke="#29B6F6" strokeWidth="1.4" strokeLinecap="round"/>
+    <path d="M0.5 1.9A13.5 13.5 0 0 1 19.5 1.9" stroke="#29B6F6" strokeWidth="1.4" strokeLinecap="round"/>
+  </svg>
+);
+
+const RefreshIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ flexShrink: 0 }}>
+    <path d="M1.5 7A5.5 5.5 0 0 1 12 4M12.5 7A5.5 5.5 0 0 1 2 10" stroke="#414141" strokeWidth="1.3" strokeLinecap="round"/>
+    <path d="M10 2.5l2 1.5-1.8 1.3" stroke="#414141" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M4 11.5L2 10l1.8-1.3" stroke="#414141" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+const ErrorSmallIcon = () => (
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ flexShrink: 0 }}>
+    <circle cx="6" cy="6" r="6" fill="#E53935"/>
+    <path d="M4 4l4 4M8 4L4 8" stroke="#fff" strokeWidth="1.2" strokeLinecap="round"/>
+  </svg>
+);
+
+type ConnectionBarVariant = 'connected' | 'no-connection';
+
+interface ConnectionBarProps {
+  variant?: ConnectionBarVariant;
+  timestamp?: string;
+  onRefresh?: () => void;
+}
+
+export const ConnectionBar = ({
+  variant = 'connected',
+  timestamp = 'Updated at 13:15:00h 27/02',
+  onRefresh,
+}: ConnectionBarProps) => (
+  <div style={{
+    display: 'flex',
+    alignItems: 'center',
+    gap: 12,
+    padding: '8px 12px',
+    borderRadius: 4,
+    background: variant === 'connected' ? 'rgba(41,182,246,0.2)' : 'rgba(196,196,196,0.3)',
+    width: 390,
+    boxSizing: 'border-box',
+    fontFamily: '"Busup Sans", sans-serif',
+  }}>
+    {variant === 'connected' ? <WifiIcon /> : <ErrorSmallIcon />}
+    <span style={{
+      fontSize: 12,
+      fontWeight: 700,
+      color: variant === 'connected' ? '#29B6F6' : '#414141',
+      whiteSpace: 'nowrap',
+    }}>
+      {variant === 'connected' ? 'Connected' : 'No connection'}
+    </span>
+    <span style={{
+      fontSize: 10,
+      fontWeight: 300,
+      color: '#414141',
+      flex: 1,
+      minWidth: 0,
+    }}>
+      {timestamp}
+    </span>
+    <button
+      onClick={onRefresh}
+      aria-label="Refresh connection"
+      style={{
+        width: 30,
+        height: 30,
+        borderRadius: 20,
+        border: 'none',
+        background: '#ffffff',
+        boxShadow: '0px 4px 12px rgba(0,0,0,0.16)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        cursor: 'pointer',
+        flexShrink: 0,
+        padding: 0,
+      }}
+    >
+      <RefreshIcon />
+    </button>
+  </div>
+);
+
+export const ConnectionBarDemo = () => (
+  <div style={{ fontFamily: '"Busup Sans", sans-serif', display: 'flex', flexDirection: 'column', gap: 16, marginBottom: 32 }}>
+    <div>
+      <p style={{ fontSize: 11, color: '#989898', margin: '0 0 8px' }}>Connection bar — Connected</p>
+      <ConnectionBar variant="connected" />
+    </div>
+    <div>
+      <p style={{ fontSize: 11, color: '#989898', margin: '0 0 8px' }}>Connection bar — No connection</p>
+      <ConnectionBar variant="no-connection" />
+    </div>
+  </div>
+);

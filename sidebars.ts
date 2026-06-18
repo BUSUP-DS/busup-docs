@@ -137,6 +137,7 @@ const sidebars: SidebarsConfig = {
             { type: 'doc', id: 'app-driver/manual-boarding-control', label: 'Manual Boarding Control' },
             { type: 'doc', id: 'app-driver/on-demand-control', label: 'On Demand Control' },
             { type: 'doc', id: 'app-driver/buttons', label: 'Square Button' },
+            { type: 'doc', id: 'app-driver/toast', label: 'Toast' },
           ],
         },
       ],
