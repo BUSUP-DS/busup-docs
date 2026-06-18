@@ -108,7 +108,7 @@ Our three main types of action.
 
 | Variant | Use when… | Avoid when… |
 |:---|:---|:---|
-| **Primary** | The action is the main goal of the screen (Confirm, Pay, Submit) | There are already other Primary buttons in the same context |
+| **Primary** | The action is the main goal of the screen (Confirm, Pay, Submit) | There are already other Primary buttons in the same **screen-level** context (e.g. a full-screen CTA or confirmation flow). In repeating list items or cards, each card is treated as an independent context — one Primary per card is acceptable. |
 | **Secondary** | The action complements or offers an alternative to Primary (Edit, Clear) | The action is the main goal — promote it to Primary |
 | **Tertiary** | The action is an escape or low-priority option (Cancel, Go back, See more) | The action needs strong visual weight — use Secondary instead |
 
@@ -232,7 +232,7 @@ A compact circular button for icon-only actions. Two visual variants — `icon` 
 ## Best Practices
 
 **Hierarchy & Placement**
-- Use only **one** Primary button per screen to avoid competing priorities.
+- Use only **one** Primary button per screen-level context (e.g. confirmation flows, full-screen CTAs). Exception: in repeating patterns such as card lists, each card is an independent context — one Primary per card is acceptable. Use this exception consciously and consistently.
 - Place the main action on the **right**, with secondary/tertiary actions to its left.
 - Avoid cluttering a screen with too many buttons.
 

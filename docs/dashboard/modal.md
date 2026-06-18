@@ -20,7 +20,7 @@ Modal is the Dashboard's overlay container for focused tasks that interrupt the 
 | Element | Description |
 |:---|:---|
 | **Overlay** | Semi-transparent dark backdrop (`rgba(70,70,70,0.5)`) that covers the page and blocks interaction with the content behind |
-| **Container** | White panel, `border-radius 8px`, `box-shadow 0px 4px 6px rgba(0,0,0,0.16)`, max width 745px |
+| **Container** | White panel, `border-radius 8px`, `box-shadow 0px 4px 6px rgba(0,0,0,0.16)`, max width 745px, padding 32px horizontal |
 | **Title** | 20px Regular — describes the task being performed (e.g. "Create expedition", "Import routes") |
 | **Content slot** | Free area between title and footer — accepts any composition of Dashboard components: form fields, dropdowns, tables, step indicators, messages |
 | **Cancel button** | Secondary style — white background, green border. Always dismisses the modal without saving |
@@ -44,6 +44,7 @@ The modal shell — overlay, title, footer buttons — stays fixed. Only the con
 
 ## Behaviour
 
+- The modal **height is variable** — it grows with its content slot. There is no fixed height; the container expands to fit what is placed inside it.
 - The modal **blocks interaction** with the page behind it until dismissed.
 - Clicking the **overlay** closes the modal (same as Cancel).
 - The **Confirm button is disabled** until all required fields in the content slot are filled.

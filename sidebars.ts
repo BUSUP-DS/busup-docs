@@ -3,18 +3,19 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     'intro',
+    { type: 'doc', id: 'components', label: 'All Components' },
 
     // ─── Foundation ──────────────────────────────────────────────────────────
     {
       type: 'category',
       label: '🎨 Foundation',
-      collapsed: false,
+      collapsed: true,
       items: [
         { type: 'doc', id: 'foundation/index', label: 'Overview' },
         {
           type: 'category',
           label: 'Design Tokens',
-          collapsed: false,
+          collapsed: true,
           items: [
             { type: 'doc', id: 'foundation/design-tokens/colors', label: 'Colors' },
             { type: 'doc', id: 'foundation/design-tokens/spacing', label: 'Spacing' },
@@ -29,7 +30,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '📱 App User',
-      collapsed: false,
+      collapsed: true,
       items: [
         { type: 'doc', id: 'app-user/index', label: 'Overview' },
 
@@ -37,7 +38,7 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Navigation',
-          collapsed: false,
+          collapsed: true,
           items: [
             { type: 'doc', id: 'app-user/navigation-bar', label: 'Navigation Bar' },
             { type: 'doc', id: 'app-user/side-menu', label: 'Side Menu' },
@@ -47,7 +48,7 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Feedback',
-          collapsed: false,
+          collapsed: true,
           items: [
             { type: 'doc', id: 'app-user/toast', label: 'Toast' },
             { type: 'doc', id: 'app-user/feedback-signs', label: 'Feedback Signs' },
@@ -58,7 +59,7 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Input & Controls',
-          collapsed: false,
+          collapsed: true,
           items: [
             { type: 'doc', id: 'app-user/buttons', label: 'Buttons' },
             { type: 'doc', id: 'app-user/inputs', label: 'Text Input' },
@@ -70,7 +71,7 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Display',
-          collapsed: false,
+          collapsed: true,
           items: [
             { type: 'doc', id: 'app-user/badge', label: 'Badge' },
             { type: 'doc', id: 'app-user/avatar', label: 'Avatar' },
@@ -82,7 +83,7 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Patterns',
-          collapsed: false,
+          collapsed: true,
           items: [
             { type: 'doc', id: 'app-user/cards', label: 'Cards' },
             { type: 'doc', id: 'app-user/ticket', label: 'Ticket' },
@@ -95,14 +96,14 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '🖥️ Dashboard',
-      collapsed: false,
+      collapsed: true,
       items: [
         { type: 'doc', id: 'dashboard/index', label: 'Overview' },
         { type: 'doc', id: 'dashboard/layout', label: 'Layout' },
         {
           type: 'category',
           label: 'Components',
-          collapsed: false,
+          collapsed: true,
           items: [
             { type: 'doc', id: 'dashboard/side-menu', label: 'Side Menu' },
             { type: 'doc', id: 'dashboard/toast', label: 'Toast' },
@@ -122,13 +123,13 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '🚌 App Driver',
-      collapsed: false,
+      collapsed: true,
       items: [
         { type: 'doc', id: 'app-driver/index', label: 'Overview' },
         {
           type: 'category',
           label: 'Components',
-          collapsed: false,
+          collapsed: true,
           items: [
             { type: 'doc', id: 'app-driver/welcome-header', label: 'Welcome Header' },
             { type: 'doc', id: 'app-driver/route-components', label: 'Route Components' },
@@ -146,13 +147,13 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: '🌐 Landings',
-      collapsed: false,
+      collapsed: true,
       items: [
         { type: 'doc', id: 'landings/index', label: 'Overview' },
         {
           type: 'category',
           label: 'Components',
-          collapsed: false,
+          collapsed: true,
           items: [
             { type: 'doc', id: 'landings/navigation-header', label: 'Navigation Header' },
             { type: 'doc', id: 'landings/search-bar', label: 'Search Bar' },

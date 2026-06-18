@@ -165,6 +165,39 @@ Icon + title + description + two actions. Use when the user needs context to dec
 
 ---
 
+## Content length guidelines
+
+Feedback Modals have a **fixed height** — they do not scroll or grow. Copy must fit within the component, not the other way around.
+
+| Variant | Max recommended content |
+|:---|:---|
+| Style Simple | 1 line title + 1 short sentence |
+| Style Full | 1 line title + 2–3 short sentences |
+
+### How to handle longer copy
+
+Use this decision flow when copy feels too long:
+
+1. **Fits in Style Simple** → use Simple.
+2. **Needs more space** → use Style Full.
+3. **Still doesn't fit in Style Full** → the copy must be revised. Coordinate with PM or copywriter to keep feedback messages short and scannable.
+4. **Copy truly cannot be shortened** (e.g. technical error codes, legal text) → do not stretch the Feedback Modal. Use a standard **information modal** instead — it is designed to hold longer content.
+
+### Rules
+
+✅ Use Style Full as the ceiling — it exists precisely for longer-than-usual cases.  
+✅ Keep descriptions to 1–2 sentences that say what happened and what to do next.  
+❌ Do not add `overflow: scroll` or any internal scroll to these modals.  
+❌ Do not create ad hoc height variants — this breaks consistency across App User and App Driver.
+
+### Why no scroll?
+
+On mobile, these modals appear as overlays. Scroll inside a small modal creates a confusing double-scroll experience and is not a supported pattern anywhere in the DS.
+
+On desktop (Dashboard), the same constraint applies for a different reason: Feedback Modals are designed as **short confirmations**, not information containers. Even on a larger screen, a modal that requires scrolling signals that the wrong component is being used — the content belongs elsewhere.
+
+---
+
 ## Best Practices
 
 - **Always interrupt intentionally** — modals block the UI. Only use them when the user must acknowledge the outcome before continuing.
