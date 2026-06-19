@@ -35,6 +35,29 @@ If you are a **Designer**, ensure you are using the latest version of our [Figma
 <br />
 ---
 
+## 🤖 DS Assistant
+
+Have a question about the DS, need to validate a prototype, or want a prompt to fix a design? The **BUSUP DS Assistant** is a chatbot trained on the full knowledge of this Design System.
+
+**What it does:**
+- Answers questions about components, tokens, and rules
+- Audits HTML prototypes or screenshots against the DS
+- Generates ready-to-use prompts to fix designs in Claude Design or Claude Code
+- Points you to the exact component in Figma
+
+**How to use:**
+1. Open the assistant via the link below
+2. Send your HTML, screenshot, or question
+3. Always mention the product (App User, App Driver, Dashboard, or Landings)
+
+👉 [Open the DS Assistant](https://claude.ai/artifacts/latest/1d2eb7b2-4b70-4f3e-b2a3-bbd34cd51374)
+
+> **For POs:** paste your prototype HTML and request an audit. The assistant returns every DS deviation found and a ready-to-copy prompt to fix them all at once.
+
+Available in **English**, **Portuguese (PT-BR)**, and **Spanish** — the assistant detects your language automatically.
+
+---
+
 ## Project Management
 
 This project is curated and managed by:
