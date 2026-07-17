@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbusup_docs=self.webpackChunkbusup_docs||[]).push([["3414"],{2592(s){s.exports=JSON.parse('{"metadata":{"permalink":"/busup-docs/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":0,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
